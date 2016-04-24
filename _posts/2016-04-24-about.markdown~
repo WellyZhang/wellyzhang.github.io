@@ -1,0 +1,46 @@
+---
+layout:     post
+title:      "About Me"
+subtitle:   "Machine Learning Enthusiast"
+date:       2016-04-24
+author:     "Welly Zhang"
+header-img: "img/post-banner-hello.jpg"
+tags:
+    - iLife
+---
+
+> "行走在路上的程序员，机器学习与深度学习爱好者"
+
+Hi, all!
+
+我是**张驰——Welly Zhang**，浙江大学计算机科学与技术学院，计算机科学与技术专业的2013级的学生，目前是浙江大学计算机辅助设计与图形学(CAD&CG)实验室的一名搬砖工人，监工是[蔡登](http://www.cad.zju.edu.cn/home/dengcai/)老师。
+
+我的研究兴趣主要包括普世机器学习，深度学习，非监督特征学习，以及计算机视觉。大三这几年来，水过各种各样的比赛，什么帝国主义的建模大赛啦，**[Kaggle](https://www.kaggle.com/)**大数据竞赛啦，**[天池](https://tianchi.shuju.aliyun.com/)**数据竞赛啦，挑战杯啦，blabla。索性队友都比较给力，拿过几个没什么用的奖项和专利。
+
+关于写代码的水平嘛，老实说，我是不如一些资深写程序的同学的，论前端，我连JavaScript都没写过，Angular是个啥也不懂；论后端，我大三基本上逃避了所有的数据库课程。想想看，这几年来也就写过几个***Toy Examples***，实在是没脸见人。好在我对算法这块，尤其是**人工智能**，兴趣浓厚，弥补了一点技术上的不足。我曾经刷过各大牛校的**Machine Learning**课程，关于**Deep Learning**和近期因为*Alpha Go*甚是火爆的**Reinforcement Learning**也学习过几门代表性的课程。我自己也常常训练一些模型来做各种有趣的实验，在图像处理上有甚。
+
+另外，我热爱公益事业，对于社会福利和教育相关的公益活动尤为热心，曾经花费大半个暑假在贵州山区支教，我现在也是浙江大学的五星级(顶级)志愿者。我也热爱旅行，曾经独自一人只身前往澳大利亚做过为其半个月的义工。
+
+关于社团服务，我是**[斯坦福大学中美学生论坛(FACES)](http://www.stanfordfaces.org/)**的一员，也是浙江大学互联网协会的成员。
+
+最后，安利一下托福口语满分选手，有需要辅导的同学欢迎来约^.^
+
+我的GitHub项目主页在[这里](https://github.com/WellyZhang)。我的简历可以在[这里](/attach/CV_chs_v2.2.pdf)找到。
+
+> "A Programmer, a Machine Learning Fan and a Deep Learning Enthusiast on the Go."
+
+Hi, all!
+
+I'm **Chi Zhang -- Welly Zhang**, a junior undergraduate student of Class 2013 majoring in *Computer Science, Zhejiang University*. I'm currently a research assistant in *State Key Lab of CAD&CG*, advised by **[Professor Deng Cai](http://www.cad.zju.edu.cn/home/dengcai/)**.
+
+My reseach interests include but are not limited to *General Machine Learning*, *Deep Learning*, *Unsupervised Feature Learning* and *Computer Vision*. Over the years, I've taken part in a variety of competitions, programming-related or not. Examples refer to *COMAP's Mathematical Contest in Modeling (MCM)*, ***[Kaggle](https://www.kaggle.com/)*** data science competitions, ***[TianChi](https://tianchi.shuju.aliyun.com/)*** data mining competitions and so on. Luckily, all of my teammates were hard-working, leading to several awards of mine and a co-authored patent.
+
+As for coding ability, I'm definitely not among one of those top programmers. In terms of frontends, I seriously have no idea how to write `JavaScript` and `Angular` while for the backends, nearly every database course has unfortunately decided to escape me. Looking back, only a few toy examples had been produced. What a shame on me as a CS major student! Nevertheless, I do find the field of ***Artifitial Intelligence*** pretty intriguing, and it somewhat makes up my weakness in coding. I've gone over nearly every ***Machine Learning*** couse available on the Internet from top universities like Stanford, University of Toronto and Oxford, ***Deep Learning*** courses involving pattern recognition and natural language processing definitely included, and a ***Reinforcement Learning*** course by David Silver, the author of *Alpha Go*. I also ran experiments of impressive applications occasionally, with a special focus on image processing.
+
+Besides, I'm keen on social welfare and voluntary work, especailly in education. I had been a volunteer teacher once, in a poor mountainous area for approximately a month, teaching children of 12 years old maths and science. A five star(top) volunteer prize was thus awarded to me. I'm also a frequent traveller and was once in Australia as a helper for half a month.
+
+In terms of community service, I am a senior member of ***[The Forum for American/Chinese Exchange at Stanford (FACES)](http://www.stanfordfaces.org/)*** and a junior member in ***The Internet Association, Zhejiang University***.
+
+Last but not least, I scored 30 in the TOEFL speaking session and any appointment for training is welcomed!
+
+My GitHub could be found [here](https://github.com/WellyZhang). And my CV is [here](/attach/CV_eng_v1.3.pdf).
