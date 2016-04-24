@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About Machine Learning, Deep Learning, Computer Vision, Life, Photo Gallery and Everything | Welly Zhang, Programmer, Machine Learning Enthusiast, Deep Learning Lover and Computer Vision Guy | @WellyZhang ML Everything">
+    <meta name="keyword"  content="Welly Zhang, 张驰, 张老师, @WellyZhang, Blog, Internet, Machine Learning, Deep Learning, Computer Vision">
+    <link rel="shortcut icon" href="/img/Zcon.jpg">
+
+    <title>聊聊「阿里旅行 · 去啊」—— 行业与战略  - Welly Blog | 张老师的部落格</title>
+
+    <link rel="canonical" href="/attach/misc/2015-06-15-alitrip-strategy/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welly Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-01-29-hello-2015/">Welcome to Hux Blog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-08-16-miui6/">「知乎」如何评价 MIUI 6？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-09-04-is-pure-android-better/">「知乎」对中国用户而言，Pure Android 是否比 MIUI 或 Flyme 体验更好？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-10-01-why-alibaba-ux-sucks/">「知乎」为什么阿里系软件体验都不好？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-11-20-responsive-web-design/">「知乎」你们觉得响应式好呢，还是手机和PC端分开来写？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-12-13-wechat-block-kuaidi/">「知乎」如何看待微信屏蔽快的打车事件？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-03-10-apple-event-2015/">「知乎」如何评价 2015 年 3 月 9 日 Apple 春季发布会？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-03-25-digital-native/">hUX 随想录（一）：Digital native 数字原住民</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-03-31-e2e_user_scenarios/">Definition of End to End User Scenarios</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-04-14-unix-linux-note/">Example Post</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-04-15-os-metro/">hUX 随想录（二）：操作系统的浪漫主义 —— Metro 篇</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-05-11-see-u-ali/">See you, Alibaba </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-05-25-js-module-loader/">Example Post with Code Highlight</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-06-15-alitrip-strategy/">聊聊「阿里旅行 · 去啊」—— 行业与战略 </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-07-09-js-module-7day/">Example Post using Keynote Layout</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-09-22-js-version/">Example Post</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-10-28-how-designer-learn-fe/">「知乎」设计师如何学习前端？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-12-15-ios9-safari-web/">iOS 9，为前端世界都带来了些什么？「译」</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-12-28-css-sucks-2015/">都 2015 年了，CSS 怎么还是这么糟糕</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2016-02-01-React-vs-Angular2/">React vs Angular 2：冰与火之歌「译」</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2016-04-24-Anybody%20Here%3F/">Any Body Here?</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-alitrip.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/post-bg-alitrip.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#产品设计" title="产品设计">产品设计</a>
+                        
+                        <a class="tag" href="/tags/#阿里巴巴" title="阿里巴巴">阿里巴巴</a>
+                        
+                        <a class="tag" href="/tags/#在线旅行" title="在线旅行">在线旅行</a>
+                        
+                        <a class="tag" href="/tags/#电子商务" title="电子商务">电子商务</a>
+                        
+                    </div>
+                    <h1>聊聊「阿里旅行 · 去啊」—— 行业与战略 </h1>
+                    
+                    
+                    <h2 class="subheading">聊聊在线旅行行业与老东家的产品思路</h2>
+                    
+                    <span class="meta">Posted by Hux on June 15, 2015</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<blockquote>
+  <p>本篇为该系列第一篇 —— 行业与战略，让我们聊聊行业、战略与格局。</p>
+</blockquote>
+
+<h2 id="section">前言</h2>
+
+<p>近几年，互联网产品从线上斗到了线下，互联网行业和传统行业的跨界融合屡见不鲜，“渗透传统行业”几乎成为了全行业下一轮创新的标配，新词“互联网+”也应运而生：</p>
+
+<blockquote>
+  <p>将互联网行业的生产要素，深度融入经济、社会等各个领域，尝试改变一些传统的实体经济行业，创造出新的产品形态、商业模式和生态</p>
+</blockquote>
+
+<p>O2O 领域已经有了非常多成功的案例：从最早的千团大战，到前年打车大战，再到餐饮 O2O……传统行业被撬动的同时，无数新的市场也在被发掘：</p>
+
+<ul>
+  <li>金融： 蚂蚁金服、芝麻信用、京东白条</li>
+  <li>通信： 微信电话本，阿里通信</li>
+  <li>交通： 打车、租车、专车</li>
+  <li>地产： 二手房、租房</li>
+  <li>医疗、家电、教育、票务……</li>
+</ul>
+
+<p>当然，还有我们的在线旅游行业，BAT 纷纷入局，盛况空前。</p>
+
+<h2 id="section-1">正文</h2>
+
+<p>历史总是现在与未来的明鉴，<strong>垂直领域互联网产品</strong>更是与行业的历史紧密相连。想要用互联网产品解决传统行业的问题，就得先了解这个行业的发展规律，看看这个行业都经历过怎样的变革。</p>
+
+<h3 id="section-2">传统老大：旅行社</h3>
+
+<p>旅行社，一个耳熟能详的名字。在互联网的变革到来之前，旅游行业几乎就是旅行社的天下。</p>
+
+<p>在行业术语里，旅行社被称为 <strong>TA：Travel Agency —— 旅游代理</strong>。
+旅行社为你提供旅游信息，代理你办航班，定酒店，买门票，办签证，找导游。通过代理你的旅游消费行为，TA 从中获利。</p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.013.jpg" alt="img" /></p>
+
+<h3 id="ota">第一轮革命：兴起的电商与 OTA</h3>
+
+<p>1995 年，中国互联网沸腾元年，北京上海接入 Internet 节点。
+1998 年，中国互联网电商元年，第一笔在线交易产生。
+1999 年，马云的阿里巴巴创办。同年，旅游行业未来的两大巨头，<strong>携程</strong>、<strong>艺龙</strong> 双双出世。</p>
+
+<p>携程、艺龙利用互联网的体验优势，迅速占领了 TA 的市场，它们被称作 <strong>OTA：Online Travel Agency</strong></p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.014.jpg" alt="img" /></p>
+
+<p>在他们诞生之初，其实都叫 XX旅行网。那为什么不说他们是做网站的，而说他们是做 TA 的呢？</p>
+
+<p>这叫要引出本文涉及的第一个常见商业模式：</p>
+
+<h4 id="agency-">Agency 模式</h4>
+
+<p>Agency，即<strong>代理模式</strong>。通过代理用户的消费行为，代理商就可以靠佣金的方式从中获利。
+举个例子：假设携程旅行网今天给某某酒店拉来了 100 个日间，那么这个酒店就要以 30元/日间 的方式给携程旅行网反多少的红利。</p>
+
+<p><strong>佣金，说白了，就是中介费。</strong></p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.016.jpg" alt="img" /></p>
+
+<p>了解了 Agency 模式，我们再回过来看携程、艺龙：
+虽然渠道改成了互联网，但其商业模式还是 TA 的那套玩法，它们其实是在和传统 TA 分同一块蛋糕。
+还是咨询、酒店、机票、旅游团、旅游套餐，只是<strong>你们在线下玩，我去线上玩了</strong>，我有渠道优势。</p>
+
+<h3 id="section-3">第二轮革命：比价搜索与去哪儿</h3>
+
+<p>时光飞驰到 2005 年，单纯做线下已经满足不了很多传统 TA 们了，大家纷纷向携程、艺龙学习，进攻线上，转型 OTA 。</p>
+
+<p>就在这样的格局下，<strong>去哪儿</strong> 横空出世，一下占据了半壁江山：</p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.021.jpg" alt="img" /></p>
+
+<p>去哪儿做了一件什么事呢，它把这些 OTA 的数据全都爬过来，做了一个<strong>比价平台</strong>。这样，用户就可以在去哪儿的网站上看看哪家 OTA 更便宜，然后用户就去消费哪家的服务。</p>
+
+<p>所谓“比价平台”，本质上说，就是 <strong>Search Engine —— 搜索引擎</strong>。</p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.018.jpg" alt="img" /></p>
+
+<p>这个这个玩法一下就厉害了：
+<strong>去哪儿挡在了用户和所有 OTA 之间，OTA 还是做原来的事情，而去哪儿则拿下了用户找 OTA 的过程</strong>。同是搜索引擎的百度也是如此：百度自己并不生产内容，而是拿下了用户找内容的过程。</p>
+
+<p>Let’s why search engine awesome：因为用户在互联网的信息海洋上找信息太难了，所以用户必须要靠搜索引擎来解决这个痛点，而搜索引擎自己也就成为了渠道：</p>
+
+<h4 id="channel-">Channel 模式</h4>
+
+<p>Channel，即<strong>渠道模式</strong>。通过优化用户的体验路径，在用户和 B 方之前挡了一道，主要对 B 盈利。
+最常见的对 B 盈利方式就是广告：<strong>Pay for Performance</strong></p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.019.jpg" alt="img" /></p>
+
+<p>简单看一眼携程和去哪儿的收入占比就可以发现：</p>
+
+<ul>
+  <li>携程主要靠来自酒店、机票的佣金盈利</li>
+  <li>去哪儿则主要靠 PFP 广告盈利</li>
+</ul>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.020.jpg" alt="img" /></p>
+
+<p>通过去哪儿的比价平台，小 OTA 开始有机会通过价格战和大 OTA 周旋。去哪儿在给予了小 OTA 机会的同时也造就了自己，这和 2003 年淘宝 C2C 的崛起，颇有异曲同工之意。</p>
+
+<h3 id="section-4">第 2.5 轮革命：尴尬的淘宝旅行</h3>
+
+<p>为什么说淘宝旅行是 2.5 次革命呢，因为它想革，但没革上。
+为什么没有革上呢？</p>
+
+<p><strong>首先是切入时机太晚</strong></p>
+
+<p>阿里其实 2010 年就开始做淘宝旅行了，一直划分在淘宝网下，由那时的淘宝北研（淘宝 UED 北京研发）团队负责，这个团队吸纳了大批雅虎中国的精英，技术水平相当高。<br />
+可是 2010 年才切入这个市场实在是太晚了，携程、去哪儿的口碑和用户习惯早都养成好几年了，没人会去你淘宝上搜航班酒店，你有大入口也没有用。</p>
+
+<p><strong>二是资源倾斜不足</strong></p>
+
+<p>2010 年还没有什么 <strong>互联网+</strong> 的概念，结合传统行业也还没有现在这么热，淘宝做旅游这事用了多大力气推很难说，反正我是没听过。
+阿里同年的发展重心还是在其电商体系的完善上：<strong>淘宝商城</strong> 启用独立域名，其 B2C 的模式刚好弥补了淘宝 C2C 的问题，这货就是后来的<strong>天猫</strong>，我们可以比较一下两者在资源倾斜上的差异：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>BU</th>
+      <th>2008</th>
+      <th>2010</th>
+      <th>2011</th>
+      <th>2012</th>
+      <th>2013</th>
+      <th>2014</th>
+      <th>2015</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>天猫</td>
+      <td>淘宝商城</td>
+      <td>独立域名</td>
+      <td>分拆</td>
+      <td>更名天猫<br />天猫事业部（1/7）</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>去啊</td>
+      <td> </td>
+      <td>淘宝旅行</td>
+      <td> </td>
+      <td> </td>
+      <td>航旅事业部（1/25）</td>
+      <td>分拆<br />更名去啊</td>
+      <td>独立域名</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>三是思路问题</strong></p>
+
+<p>淘宝旅行想怎么玩呢，它实际上就是想用淘宝/天猫的思路去做在线旅行，其实背后还是淘宝卖家和天猫卖家，只不过这次的商户换成 OTA 入驻了，然后大家开开心心像卖衣服一样去卖旅行产品。</p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.023.jpg" alt="img" /></p>
+
+<p>听上去很美，不但利用了阿里系的大量资源，还直接复刻了淘宝/天猫的牛逼模式 —— 平台模式</p>
+
+<h4 id="platform-">Platform 模式</h4>
+
+<p>Platform，即<strong>平台模式</strong>，可以说是当今最叼的商业模式了，它相当于构建了一个完整的生态、市场环境，在这里整合买卖双方的资源。通过维护市场秩序、制定市场规则，让市场活跃，从而赚取场子费。</p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.026.jpg" alt="img" /></p>
+
+<p>想想看，每一笔交易都在你的地盘上发生，只要市场一直活跃，你就可以在其中<strong>双边、多边盈利</strong>。什么竞价排名、广告平台、VIP 特权，盈利模式太丰富了</p>
+
+<p>美梦做完了，回到淘宝旅行来。做平台是每个产品的梦想，肯定是对的。那么问题出在哪呢？</p>
+
+<p><strong>太不垂直了！</strong> 旅游行业，极度要求信誉：去哪儿对接的都是 B 类商家（OTA，品牌连锁酒店，直销等），从根本上就保证了产品体验。淘宝旅行的产品则充斥着大量的小旅行社、个人之类的小卖家，严重影响购买体验。你能想象预定一间酒店发现下面十几二十页的卖家，选完卖家又要跟人在旺旺上扯半个小时么？价格便宜作为唯一的优势，是以严重牺牲产品购买体验为代价的，极为得不偿失。更何况，旅游产品的受众大部分还是消费能力较强的人群，更是看重商家/产品质量而不是价格了。</p>
+
+<h3 id="now">第三轮革命：Now</h3>
+
+<p>OK，经过这么一番折腾，第三次变革就来了。
+BAT 纷纷介入，行业进入了传说中的 BATX 格局：</p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.028.jpg" alt="img" /></p>
+
+<p>阿里最近动作频频，力推去啊不说，更是收购线下酒店软件石基，配合蚂蚁金服期下芝麻信用开展“酒店信用住”等业务
+百度早早投资去哪儿，两个搜索引擎起家的公司风格一脉相承。同时，百度也悄悄发布了百度旅行这样的试水产品
+腾讯入股艺龙，同程网等，也在尝试 QQ 旅游等产品</p>
+
+<p>Update：不过，就在 2015.5 左右，携程宣布收购艺龙，非常戏剧性的局面啊……</p>
+
+<p>为什么都要介入呢？
+一是互联网结合传统行业的大潮到来，大家都发现旅游行业是一个金矿，市场其实特别大……
+二是这个领域确实还有很多可以突破的商业模式存在，很多细分领域都开始有创业公司起来，整个行业的生态也越来越丰富：</p>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.029.jpg" alt="img" /></p>
+
+<p>这种时候，BAT 这样的土豪公司就想进来收网了 —— 砸钱也得砸出个平台来！
+所以，这一轮游戏一定能看到一次大洗牌（艺龙第一个就阵亡了）</p>
+
+<p>那么，这轮革命怎么演变呢？</p>
+
+<p><strong>一是模式融合</strong>，以前做 OTA 的做 OTA，做渠道的做渠道，尝试做平台的做平台。现在，大家都知道平台模式可能是更好的形态，纷纷开始进化了。</p>
+
+<ul>
+  <li>都做 OTA，拿下各种牛逼直营，最典型的就是航班</li>
+  <li>都做平台，尤其是质量相对比较高的 B2C 平台。然后尝试可能的 C2C 产品形态 （去啊的客栈是一个很好的尝试）</li>
+</ul>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.030.jpg" alt="img" /></p>
+
+<p><strong>二是思路进化</strong></p>
+
+<ul>
+  <li>从单一的购买/渠道业务转向服务平台。融合周边服务，拉上细分领域，外围行业一起玩</li>
+  <li>强调用户体验与用户留存，强调<strong>一站式服务</strong>、<strong>个性化服务</strong> 等更极致的产品形态</li>
+</ul>
+
+<p><img src="/img/in-post/post-alitrip-pd/post-alitrip-pd.031.jpg" alt="img" /></p>
+
+<p>而这些演变，正是 <strong>阿里旅行 · 去啊</strong> 致力去做到的。从大版本 5.0 开始，淘宝旅行将 <strong>洗心革面</strong>，去追求一个更极致，更垂直，体验更优秀的产品形态。</p>
+
+<p>让我们一起见证去啊的成长，与在线旅游行业的变革吧！</p>
+
+<hr />
+
+<p><em>本篇完。</em></p>
+
+<blockquote>
+  <p>本文作者系前「阿里旅行 · 去啊」前端实习生，本文系业余时间学习之作。
+如有任何知识产权、版权问题或理论错误，还请指正。
+转载请注明原作者及以上信息。</p>
+</blockquote>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key=""
+                    data-title="聊聊「阿里旅行 · 去啊」—— 行业与战略 "
+                    data-url="/attach/misc/2015-06-15-alitrip-strategy/"
+                    data-images="/img/post-bg-alitrip.jpg"
+                    data-content="
+  本篇为该系列第一篇 —— 行业与战略，让我们聊聊行业、战略与格局。
+
+
+前言
+
+近几年，互联网产品从线上斗到了线下，互联网行业和传统行业的跨界融合屡... | Welly Blog | 张老师的部落格 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key=""
+                        data-title="聊聊「阿里旅行 · 去啊」—— 行业与战略 "
+                        data-url="/attach/misc/2015-06-15-alitrip-strategy/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#前端开发" title="前端开发" rel="3">
+                                    前端开发
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#JavaScript" title="JavaScript" rel="3">
+                                    JavaScript
+                                </a>
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://web.stanford.edu/~yukez/">Yuke Zhu</a></li>
+                    
+                        <li><a href="http://www.linkedin.com/in/%E7%91%9C%E9%A6%A8-%E6%B1%A0-28362793?authType=name&authToken=AOoT&goback=&trk=abook_conn">Vikat Chi</a></li>
+                    
+                        <li><a href="http://www.stat.ucla.edu/~sczhu/">Song-Chun Zhu</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'wellyblog';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/WellyZhangc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/WellyZhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/WellyZhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/WellyZhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Welly Blog 2016
+                    <br>
+                    Designed by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-76201806-1';
+    var _gaDomain = 'wellyzhang.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '036ab260afee2bb2935032e742a2b29e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

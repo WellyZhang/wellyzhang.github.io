@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About Machine Learning, Deep Learning, Computer Vision, Life, Photo Gallery and Everything | Welly Zhang, Programmer, Machine Learning Enthusiast, Deep Learning Lover and Computer Vision Guy | @WellyZhang ML Everything">
+    <meta name="keyword"  content="Welly Zhang, 张驰, 张老师, @WellyZhang, Blog, Internet, Machine Learning, Deep Learning, Computer Vision">
+    <link rel="shortcut icon" href="/img/Zcon.jpg">
+
+    <title>「知乎」为什么阿里系软件体验都不好？ - Welly Blog | 张老师的部落格</title>
+
+    <link rel="canonical" href="/attach/misc/2014-10-01-why-alibaba-ux-sucks/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welly Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-01-29-hello-2015/">Welcome to Hux Blog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-08-16-miui6/">「知乎」如何评价 MIUI 6？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-09-04-is-pure-android-better/">「知乎」对中国用户而言，Pure Android 是否比 MIUI 或 Flyme 体验更好？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-10-01-why-alibaba-ux-sucks/">「知乎」为什么阿里系软件体验都不好？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-11-20-responsive-web-design/">「知乎」你们觉得响应式好呢，还是手机和PC端分开来写？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2014-12-13-wechat-block-kuaidi/">「知乎」如何看待微信屏蔽快的打车事件？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-03-10-apple-event-2015/">「知乎」如何评价 2015 年 3 月 9 日 Apple 春季发布会？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-03-25-digital-native/">hUX 随想录（一）：Digital native 数字原住民</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-03-31-e2e_user_scenarios/">Definition of End to End User Scenarios</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-04-14-unix-linux-note/">Example Post</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-04-15-os-metro/">hUX 随想录（二）：操作系统的浪漫主义 —— Metro 篇</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-05-11-see-u-ali/">See you, Alibaba </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-05-25-js-module-loader/">Example Post with Code Highlight</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-06-15-alitrip-strategy/">聊聊「阿里旅行 · 去啊」—— 行业与战略 </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-07-09-js-module-7day/">Example Post using Keynote Layout</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-09-22-js-version/">Example Post</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-10-28-how-designer-learn-fe/">「知乎」设计师如何学习前端？</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-12-15-ios9-safari-web/">iOS 9，为前端世界都带来了些什么？「译」</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2015-12-28-css-sucks-2015/">都 2015 年了，CSS 怎么还是这么糟糕</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2016-02-01-React-vs-Angular2/">React vs Angular 2：冰与火之歌「译」</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/attach/misc/2016-04-24-Anybody%20Here%3F/">Any Body Here?</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-alibaba.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/post-bg-alibaba.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#知乎" title="知乎">知乎</a>
+                        
+                        <a class="tag" href="/tags/#阿里巴巴" title="阿里巴巴">阿里巴巴</a>
+                        
+                        <a class="tag" href="/tags/#交互设计" title="交互设计">交互设计</a>
+                        
+                    </div>
+                    <h1>「知乎」为什么阿里系软件体验都不好？</h1>
+                    
+                    
+                    <h2 class="subheading">或许这就是所谓的企业 DNA </h2>
+                    
+                    <span class="meta">Posted by Hux on October 1, 2014</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<blockquote>
+  <p>这篇文章转载自<a href="http://www.zhihu.com/question/25657351/answer/31278511">我在知乎上的回答</a></p>
+</blockquote>
+
+<div>
+    <br />
+    <br /><b>一言以蔽之，优先级。</b>
+    <br />这个优先级并不是由谁或者哪个Boss定的，而是<b>长期的市场竞争和业务需求下的结果</b>
+    <br />
+    <br />
+    <ul>
+        <li><b>为什么企鹅家的App用户体验较好？</b>
+        </li>
+    </ul>
+    企鹅家的主力产品，QQ、微信、QQ音乐、QQ空间 等，多是IM（即时通讯）、SNS（社交网络）、数字娱乐 等形态的产品。
+    <br />
+    <br /><b>这类产品往往必须「直接依靠优秀的产品服务与用户体验」来赢得用户。</b>
+    <br />
+    <br />如果这点做不好，产品就无法在竞争中脱颖而出。这也使得在企鹅内部，<b>围绕这部分的要求，需求，反馈 </b><b>都一定最多，使得企鹅不得不把这部分做好</b>。
+    <br />
+    <br />
+    <ul>
+        <li><b>那为什么阿里系的App用户体验较差？</b>
+        </li>
+    </ul>
+    阿里系的主力产品，从1688、淘宝、再到支付宝、天猫、淘宝旅行、淘点点、一淘、旺旺，要么是电商类产品，要么就是电商类的延伸产品。
+    <br />
+    <br />而这类产品的核心竞争力（或者说要做好的难处），往往在<b>「如何与实体经济，甚至政府 打交道」、</b><b>「如何做好运营」，</b>而非优秀的用户体验。
+    <br />
+    <br />应该说，阿里从来都不是不重视用户体验，这两年更是愈发重视。但是因为身处这样的市场环境，<b>阿里必须先完成这些优先级更高的需求（海量的业务，运营需求）以抢占市场，</b>
+    <br />这才导致阿里内部无法有太多精力focus到客户端体验上。
+    <br />
+    <br />
+    <br />
+    <br />上面就算基本回答了题主的问题，
+    <br />不过，知乎惯例，多说几句：
+    <br />
+    <br /><b>其实，上面的答案，也可以说这都是说辞。</b>
+    <br />
+    <br />在我刚刚加入阿里的时候，我也一度纳闷甚至郁闷这个事。直到我开始接触更多的项目，我才能逐渐理解「为什么会这样」。
+    <br />
+    <br /><b>但是，这并不足以成为借口。</b>
+    <br /><b>该不该改？ 当然该改。</b>
+    <br />
+    <br />我相信几乎所有阿里人，尤其UED，肯定都不希望这样。
+    <br />只能说，这需要阿里投入更多的人、更多的时间、更多的努力来做好
+    <br />
+    <br />
+    <br />
+    <br />以上。
+    <br />
+    <br />利益相关：
+    <br />阿里员工
+    <br />
+    <br />
+</div>
+
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key=""
+                    data-title="「知乎」为什么阿里系软件体验都不好？"
+                    data-url="/attach/misc/2014-10-01-why-alibaba-ux-sucks/"
+                    data-images="/img/post-bg-alibaba.jpg"
+                    data-content="
+  这篇文章转载自我在知乎上的回答
+
+
+
+    
+    一言以蔽之，优先级。
+    这个优先级并不是由谁或者哪个Boss定的，而是长期的市场竞争和... | Welly Blog | 张老师的部落格 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key=""
+                        data-title="「知乎」为什么阿里系软件体验都不好？"
+                        data-url="/attach/misc/2014-10-01-why-alibaba-ux-sucks/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#前端开发" title="前端开发" rel="3">
+                                    前端开发
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#JavaScript" title="JavaScript" rel="3">
+                                    JavaScript
+                                </a>
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://web.stanford.edu/~yukez/">Yuke Zhu</a></li>
+                    
+                        <li><a href="http://www.linkedin.com/in/%E7%91%9C%E9%A6%A8-%E6%B1%A0-28362793?authType=name&authToken=AOoT&goback=&trk=abook_conn">Vikat Chi</a></li>
+                    
+                        <li><a href="http://www.stat.ucla.edu/~sczhu/">Song-Chun Zhu</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'wellyblog';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/WellyZhangc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/WellyZhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/WellyZhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/WellyZhang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Welly Blog 2016
+                    <br>
+                    Designed by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-76201806-1';
+    var _gaDomain = 'wellyzhang.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '036ab260afee2bb2935032e742a2b29e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
