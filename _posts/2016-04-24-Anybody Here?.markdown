@@ -5,12 +5,11 @@ subtitle:   "\"Hello World, Hello Blog\""
 date:       2016-04-24 16:00:00
 author:     "Welly Zhang"
 header-img: "img/post-bg-2015.jpg"
-catalog: true
 tags:
     - 生活
 ---
 
-> “Yeah It's on. ”
+> “Yeah It's on.”
 
 
 ## 前言
