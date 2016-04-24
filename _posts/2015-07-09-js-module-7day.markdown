@@ -1,6 +1,6 @@
 ---
 layout:     keynote
-title:      "Example Post using Keynote Layout"
+title:      "JavaScript 模块化七日谈"
 subtitle:   "Keynote: JavaScript Modularization Journey"
 iframe:     "http://huangxuan.me/js-module-7day/"
 date:       2015-07-09
