@@ -23,7 +23,7 @@ header-img: "img/about-banner.jpg"
 
 <p>我是<strong>张驰——Welly Zhang</strong>，浙江大学计算机科学与技术学院，计算机科学与技术专业的2013级的学生，目前是浙江大学计算机辅助设计与图形学(CAD&amp;CG)实验室的一名搬砖工人，监工是<a href="http://www.cad.zju.edu.cn/home/dengcai/">蔡登</a>老师。</p>
 
-<p>我的研究兴趣主要包括普世机器学习，深度学习，非监督特征学习，以及计算机视觉。大三这几年来，水过各种各样的比赛，什么帝国主义的建模大赛啦，<strong><a href="https://www.kaggle.com/">Kaggle</a></strong>大数据竞赛啦，<strong><a href="https://tianchi.shuju.aliyun.com/">天池</a></strong>数据竞赛啦，挑战杯啦，blabla。索性队友都比较给力，拿过几个没什么用的奖项和专利。</p>
+<p>我的研究兴趣主要包括普适机器学习，深度学习，非监督特征学习，以及计算机视觉。大三这几年来，水过各种各样的比赛，什么帝国主义的建模大赛啦，<strong><a href="https://www.kaggle.com/">Kaggle</a></strong>大数据竞赛啦，<strong><a href="https://tianchi.shuju.aliyun.com/">天池</a></strong>数据竞赛啦，挑战杯啦，blabla。索性队友都比较给力，拿过几个没什么用的奖项和专利。</p>
 
 <p>关于写代码的水平嘛，老实说，我是不如一些资深写程序的同学的，论前端，我连JavaScript都没写过，Angular是个啥也不懂；论后端，我大三基本上逃避了所有的数据库课程。想想看，这几年来也就写过几个<strong><em>Toy Examples</em></strong>，实在是没脸见人。好在我对算法这块，尤其是<strong>人工智能</strong>，兴趣浓厚，弥补了一点技术上的不足。我曾经刷过各大牛校的<strong>Machine Learning</strong>课程，关于<strong>Deep Learning</strong>和近期因为<em>Alpha Go</em>甚是火爆的<strong>Reinforcement Learning</strong>也学习过几门代表性的课程。我自己也常常训练一些模型来做各种有趣的实验，在图像处理上尤甚。</p>
 
@@ -33,37 +33,33 @@ header-img: "img/about-banner.jpg"
 
 <p>最后，安利一下，本人托福口语满分选手，有需要辅导的同学欢迎来约^.^</p>
 
-<p>我的GitHub项目主页在<a href="https://github.com/WellyZhang">这里</a>。我的简历可以在<a href="/attach/CV_chs_v2.2.pdf">这里</a>找到。</p>
+<p>我的GitHub项目主页在<a href="https://github.com/WellyZhang">这里</a>。我的简历可以在<a href="/attach/CV_chs_blog.pdf">这里</a>找到。</p>
 
 </div>
 
 <!-- English Version -->
 <div class="en post-container">
-    <blockquote><p>Yet another Frontend Engineer. <br>
-    Yet another Lifelong Designer.</p></blockquote>
 
-    <p>My name is <strong>Huang Xuan(黄玄)</strong>，you can call me nickname <strong>Hux</strong>. I studied Digital Media Art in <a href="https://en.wikipedia.org/wiki/Communication_University_of_China">Communication University of China</a>, which is a interdisciplinary subject of technology and art, and now Senior.</p>
+<blockquote>
+<p>“A Programmer, a Machine Learning Fan and a Deep Learning Enthusiast on the Go.”</p>
+</blockquote>
 
-    <p>As a engineer, I work at Wepiao (<a href="https://www.crunchbase.com/organization/wepiao#/entity">in CrunchBase</a>) as the dev lead of Front-End Infrastructure Team currently, and <a href="https://www.alitrip.com/">Alibaba Trip</a> as Intern for one year previously.</p>
+<p>Hi, all!</p>
 
-    <p>As a designer, I am ever offered as UI/UX Designer Intern by Alibaba, Microsoft etc. I am experienced in Motion Graphic Design, and familer with typography and layout.</p>
+<p>I’m <strong>Chi Zhang – Welly Zhang</strong>, a junior undergraduate student of Class 2013 majoring in <em>Computer Science, Zhejiang University</em>. I’m currently a research assistant in <em>State Key Lab of CAD&amp;CG</em>, advised by <strong><a href="http://www.cad.zju.edu.cn/home/dengcai/">Professor Deng Cai</a></strong>.</p>
 
-    <p>Some of my projects is put on my <a href="/portfolio">Portfolio 👉</a> and <a href="http://github.com/huxpro">Github 👉</a>. I am also translator of <a href="http://www.gfansub.com/">GDG China</a>, maintainer of <a href="http://zhuanlan.zhihu.com/FrontendMagazine">Frontend Magazine</a> and owner of <a href="http://zhuanlan.zhihu.com/huxblog">Lifelong Romantic Geek</a></p>
+<p>My reseach interests include but are not limited to <em>General Machine Learning</em>, <em>Deep Learning</em>, <em>Unsupervised Feature Learning</em> and <em>Computer Vision</em>. Over the years, I’ve taken part in a variety of competitions, programming-related or not. Examples refer to <em>COMAP’s Mathematical Contest in Modeling (MCM)</em>, <strong><em><a href="https://www.kaggle.com/">Kaggle</a></em></strong> data science competitions, <strong><em><a href="https://tianchi.shuju.aliyun.com/">TianChi</a></em></strong> data mining competitions and so on. Luckily, all of my teammates were hard-working, leading to several awards of mine and a co-authored patent.</p>
 
-    <h5>Talks</h5>
+<p>As for coding ability, I’m definitely not among one of those top programmers. In terms of frontends, I seriously have no idea how to write <code class="highlighter-rouge">JavaScript</code> and <code class="highlighter-rouge">Angular</code> while for the backends, nearly every database course has unfortunately decided to escape me. Looking back, only a few toy examples had been produced. What a shame on me as a CS major student! Nevertheless, I do find the field of <strong><em>Artifitial Intelligence</em></strong> pretty intriguing, and it somewhat makes up my weakness in coding. I’ve gone over nearly every <strong><em>Machine Learning</em></strong> couse available on the Internet from top universities like Stanford, University of Toronto and Oxford, <strong><em>Deep Learning</em></strong> courses involving pattern recognition and natural language processing definitely included, and a <strong><em>Reinforcement Learning</em></strong> course by David Silver, the author of <em>Alpha Go</em>. I also ran experiments of impressive applications occasionally, with a special focus on image processing.</p>
 
-    <ul>
-    <li><a href="http://huangxuan.me/2015/12/28/css-sucks-2015/">CSS Still Sucks 2015 · 2015</a></li>
-    <li><a href="http://huangxuan.me/2015/07/09/js-module-7day/">JavaScript Modularization Journey · 2015</a></li>
-    </ul>
+<p>Besides, I’m keen on social welfare and voluntary work, especailly in education. I had been a volunteer teacher once, in a poor mountainous area for approximately a month, teaching children of 12 years old maths and science. A five star(top) volunteer prize was thus awarded to me. I’m also a frequent traveller and was once in Australia as a helper for half a month.</p>
 
+<p>In terms of community service, I am a senior member of <strong><em><a href="http://www.stanfordfaces.org/">The Forum for American/Chinese Exchange at Stanford (FACES)</a></em></strong> and a junior member in <strong><em>The Internet Association, Zhejiang University</em></strong>.</p>
 
-    <h5>Resumes</h5>
+<p>Last but not least, I scored 30 in the TOEFL speaking session and any appointment for training is welcomed!</p>
 
-    <ul>
-    <li><a href="/attach/2016_Hux_en_SE.pdf">2016_Hux_en_SE &amp; FE</a></li>
-    <li><a href="attach/2016_Hux_en_PD.pdf">2016_Hux_en_PD &amp; UX</a></li>
-    </ul>
+<p>My GitHub page could be found <a href="https://github.com/WellyZhang">here</a>. And my CV is <a href="/attach/CV_eng_blog.pdf">here</a>.</p>
+
 </div>
 
 <!-- Handle Language Change -->
