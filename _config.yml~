@@ -101,9 +101,5 @@ friends: [
     {
         title: "Song-Chun Zhu",
         href: "http://www.stat.ucla.edu/~sczhu/"
-    },
-    {
-        title: "Deng Cai",
-        href: "http://www.cad.zju.edu.cn/home/dengcai/"
     }
 ]
