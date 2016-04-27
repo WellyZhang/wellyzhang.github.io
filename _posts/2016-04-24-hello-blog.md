@@ -4,7 +4,7 @@ title:      "Excuse Me, Is Anyone Here?"
 subtitle:   "\"Hello World, Hello Blog\""
 date:       2016-04-24
 author:     "Welly Zhang"
-header-img: "img/post-banner-hello.jpg"
+header-img: "img/banner/post-banner-hello.jpg"
 catalog: true
 tags:
     - iLife
