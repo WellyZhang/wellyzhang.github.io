@@ -39,6 +39,9 @@ Superscript.
 TO insert special symbols, firt find it in the character map, remember its unicode and insert it by first composing Shift and Ctrl then enterting its unicode and a blank.
 E.g.「(u300c)」(u300d)
 
+## for first level header
+#### for the second level header under the first
+
 ```
 
 
