@@ -42,6 +42,10 @@ E.g.「(u300c)」(u300d)
 ## for first level header
 #### for the second level header under the first
 
+MathJax.
+
+set use-math: true in the yaml header.
+
 ```
 
 
