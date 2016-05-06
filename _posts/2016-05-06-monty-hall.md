@@ -93,7 +93,7 @@ $$P(No. 1 = car \mid No. 2 = goat) = \frac{1 \times {1 \over 3}}{1} = {1 \over 3
 
 AH! It seems that **we should switch**!
 
-Quite cunterintuitive!
+Quite counterintuitive!
 
 ## The Frequentist Approach
 
