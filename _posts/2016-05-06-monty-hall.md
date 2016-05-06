@@ -109,7 +109,7 @@ Let me show you.
 
 <small class="img-hint">Table from [[1]](#ref1)</small>
 
-As illustrated above, $P(No. 1 = car \mid A opened door with a goat) = {1 \over 3}$.
+As illustrated above, $P(No. 1 = car \mid Door = goat) = {1 \over 3}$.
 
 ## Naive Generalization
 
