@@ -4,7 +4,7 @@ title:      "Demystify DeepWalk and Crack Its Code"
 subtitle:   "Brief Overview of DeepWalk"
 date:       2016-05-09
 author:     "Welly Zhang"
-header-img: "img/banner/post-banner-deepwalk.jpg" 
+header-img: "img/banner/post-banner-deepwalk.png" 
 catalog: true
 use-math: true
 tags:
@@ -91,6 +91,39 @@ In the algorithm, the authors built a binary hierarchical softmax tree to help s
 ![visdeepwalk](/img/in-post/deepwalk/vis.jpg)
 <small class="img-hint">Figure 2. Visualizing DeepWalk. The left plot shows the ground truth while the right demonstrates effective embeddings.</small>
 
+## DeepWalk Implementation
+
+To help thoroughly understand how the algorithm crunches the data, one should definitely read the source code. 
+
+In fact, there have already been a variety of implementations of the algorithm by different deep learning frameworks, including *Tensorflow* and *Keras* on GitHub. I would personally suggest the original repository<sup>[[4](#ref4)]</sup> by the authors since it not only retains the source ideas but also shows minimum dependency on other packages. I also have a personal fork<sup>[[5](#ref5)]</sup> that provide a near-complete comments on the formatted source code.
+
+There are several source files in the deepwalk directory.
+
+| File | Function |
+| :---: | :---: |
+| \_\_init\_\_.py | Package info |
+| \_\_main\_\_.py | Main algorithm |
+| graph.py | Utilities for the graph structure |
+| skipgram.py | Wrapper for Word2Vec |
+| walks.py | Corpus generation |
+
+<small class="img-hint">Table 2. DeepWalk codebase.</small>
+
+The highest level abstraction is pretty straightforward: generate walks then train.
+
+```Python
+print("Walking...")
+walks = graph.build_deepwalk_corpus(G, num_paths = args.number_walks, 
+        path_length = args.walk_length, alpha = 0, 
+        rand = random.Random(args.seed))
+print("Training...")
+model = Word2Vec(walks, size = args.representation_size, 
+        window = args.window_size, min_count = 0, 
+        workers = args.workers)
+```
+
+However, details are explained in the corresponding files. If you find it a bit hard to understand the code, feel free to access my fully-commented fork here<sup>[[5](#ref5)]</sup>.
+
 ## Conclusion
 
 DeepWalk has made great contribution in the field of network learning and community-based data mining due to its accuracy and scalability.
@@ -104,4 +137,6 @@ If everything goes well, I will update our work on how DeepWalk contributes to k
 1. <a id="ref1">[DeepWalk: Online Learning of Social Representations](http://arxiv.org/abs/1403.6652)</a>
 2. <a id="ref2">[A Neural Probabilistic Language Model](http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)</a>
 3. <a id="ref3">[Efficient Estimation of Word Representations in Vector Space](http://arxiv.org/abs/1301.3781)</a>
+4. <a id="ref4">[DeepWalk - Deep Learning for Graphs](https://github.com/phanein/deepwalk)</a>
+5. <a id="ref5">[Fully-commented DeepWalk](https://github.com/WellyZhang/DeepWalk)</a>
 
