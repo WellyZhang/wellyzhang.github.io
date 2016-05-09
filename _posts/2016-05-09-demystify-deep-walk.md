@@ -47,7 +47,7 @@ However, these representations do not encode any useful information about the se
 
 So, let's do it in a different way.
 
-Actually, there is no oracle that says the embedding must contain a single nonzero number in a fixed position. So as [Yoshua Benjio](#ref2) proposed, why not use a arbitrary vector to represent a word?
+Actually, there is no oracle that says the embedding must contain a single nonzero number in a fixed position. So as Yoshua Benjio<sup>[[2](#ref2)]</sup> proposed, why not use a arbitrary vector to represent a word?
 
 Like, why couldn't "boy" be encoded $(0.12, 3.42, 0.012, 9.18, 14.00, -0.25)$?
 
