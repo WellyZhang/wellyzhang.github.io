@@ -63,7 +63,7 @@ duoshuo_share: true
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 036ab260afee2bb2935032e742a2b29e
+# ba_track_id: 036ab260afee2bb2935032e742a2b29e
 # Google Analytics
 ga_track_id: 'UA-76201806-1'            
 # Format: UA-xxxxxx-xx
