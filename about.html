@@ -6,7 +6,7 @@ header-img: "img/banner/about-banner.jpg"
 ---
 
 <!-- Language Selector -->
-<select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+<select onchange="onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 英文 English </option>
     <option value="1"> 中文 Chinese </option>
 </select>
@@ -88,7 +88,8 @@ header-img: "img/banner/about-banner.jpg"
             $en.style.display = "block";
             $zh.style.display = "none";
         // en by default
-        }else{
+        }
+        if(_hash == "#zh"){
             // not trigger onChange, otherwise cause a loop call.
             $select.selectedIndex = 1;
             $zh.style.display = "block";
@@ -100,7 +101,8 @@ header-img: "img/banner/about-banner.jpg"
     function onLanChange(index){
         if(index == 0){
             window.location.hash = "#en"
-        }else{
+        }
+        if(index == 1){
             window.location.hash = "#zh"
         }
     }
