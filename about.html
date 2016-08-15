@@ -5,12 +5,6 @@ description: "Hey, I'm Welly Zhang."
 header-img: "img/banner/about-banner.jpg"
 ---
 
-<!-- Language Selector -->
-<select onchange="onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 英文 English </option>
-    <option value="1"> 中文 Chinese </option>
-</select>
-
 <!-- English Version -->
 <div class="en post-container">
 
@@ -68,49 +62,6 @@ header-img: "img/banner/about-banner.jpg"
 <p>我的GitHub项目主页在<a href="https://github.com/WellyZhang">这里</a>。我的简历可以在<a href="/attach/CV_chs_blog.pdf">这里</a>找到。</p>
 
 </div>
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 0;
-            $en.style.display = "none";
-            $zh.style.display = "block";
-        // en by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 1;
-            $zh.style.display = "none";
-            $en.style.display = "block";
-        }
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#en"
-        }
-        if(index == 1){
-            window.location.hash = "#zh"
-        }
-    }
-
-    // init
-    _render();
-</script>
-
-
 
 {% if site.duoshuo_username %}
 <!-- 多说评论框 start -->
