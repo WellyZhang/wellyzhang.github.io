@@ -18,7 +18,7 @@ tags:
 
 > Computational Art, or Algorithmic Art, is an emerging new field that uses mathematical algorithms and computers to generate imaginative and abstract images.<sup>[[1](#ref1)]</sup> 
 
-As folks in Willamette University defines it, computational art renders itself somewhat in the intersection of computer science and aesthetics. This interdisciplinary brand-new field requires both an mathematical and computational background and an insight of art. Some very elementary algorithms find their roots in medical image processing, where *erosion*, *opening* and *closure* are realized to be widely used in preprocessing, postprocessing and segmentation.
+As folks in Willamette University define it, computational art renders itself somewhat in the intersection of computer science and aesthetics. This interdisciplinary brand-new field requires both a mathematical and computational background and an insight of art. Some very elementary algorithms find their roots in medical image processing, where *erosion*, *opening* and *closure* are realized to be widely used in preprocessing, postprocessing and segmentation.
 
 But nowadays, computer scientists, equipped with powerful computational resources and insightful ideas, become much more ambitious and thus boost this new field to a much higher level: interesting applications emerge one after another and never seem to stop. 
 
@@ -43,7 +43,7 @@ I do have more examples, but readers are strongly encouraged to try cases of the
 
 As shown above, the algorithm is also divided into two stages, one that generates line drawing with strokes and another that applies tone mapping and convolves the line drawing and tone mapping to produce the colorful image.
 
-The first stage consists of four steps. In the first step, the program performs the edge detection, which in the paper is implemented by the second-order gradient. However, this is not fixed and other edge detection algorithms, such as Canny operator<sup>[[3]](#ref3)</sup> and Sobel operator<sup>[[4]](#ref4)</sup>, could be used. Then comes the convolution: the edge graph is convolved with eight equally distributed line kernels around a circle. After Non-Maximum-Suppression(NMS)-aware classification(no matter how I'm opposed to call it *classification*), eight line kernels are again convolved with the eight classification responses and summed to yield the line drawing, *S'*. Proper postproessing would give us the grayscale image *S*.
+The first stage consists of four steps. In the first step, the program performs the edge detection, which in the paper is implemented by the second-order gradient. However, this is not fixed and other edge detection algorithms, such as Canny operator<sup>[[3]](#ref3)</sup> and Sobel operator<sup>[[4]](#ref4)</sup>, could be used. Then comes the convolution: the edge graph is convolved with eight equally distributed line kernels around a circle. After Non-Maximum-Suppression(NMS)-aware classification (no matter how I'm opposed to calling it *classification*), eight line kernels are again convolved with the eight classification responses and summed to yield the line drawing, *S'*. Proper postproessing would give us the grayscale image *S*.
 
 In the second stage, the author combines the histogram tone mapping and the rendering. The author gathers many color distributions from colorful sketch images and summarizes the pattern by predefined distribution functions. A histogram matching is thus applied accordingly. However, to better render the textures, efforts are needed. In the paper, a loss function is desigend to work out an intermediate kernel *T*. The kernel again convolves with *S* and finally the colorful image comes out. 
 
@@ -72,13 +72,13 @@ I received a return exactly as expected, a ***starry Johannesburg***, by the com
 
 As it turns out, there are even much more interesting paintings combining classic art style and contemporary art, for which someone even built a gallery.
 
-Many people might wonder: why is it called *NEURAL*? 
+Many people might wonder: why is it called ***NEURAL***? 
 
 Actually, this algorithm leverages the most advanced technology of *neural networks* in *deep learning*.
 
 > In machine learning and cognitive science, an *artificial neural network* (**ANN**) is a network inspired by biological neural networks (the central nervous systems of animals, in particular the brain) which are used to estimate or approximate functions that can depend on a large number of inputs that are generally unknown.<sup>[[6]](#ref6)</sup>
 
-The algorithm first extracts image feature maps of the style image and the content image from a *Convolutional Neural Network*<sup>[[7]](#ref7)</sup>, or **CNN**, pretrained for image classification. Then a white noise image is fed to the neural network and by a properly designed loss function fusing the sytle image features and content image features and the optimizer, such as L-BFGS<sup>[[8]](#ref8)</sup>, a somewhat optimum solution would be found. If you are lucky enough setting the hyperparameters and training the network, such a solution would be an excellent combination of the style and the content.
+The algorithm first extracts image feature maps of the style image and the content image from a *Convolutional Neural Network*<sup>[[7]](#ref7)</sup>, or **CNN**, pretrained for image classification. Then a white noise image is fed to the neural network and by a properly designed loss function fusing the style image features and content image features and an optimizer, such as *L-BFGS*<sup>[[8]](#ref8)</sup>, a somewhat optimum solution would be found. If you are lucky enough setting the hyperparameters and training the network, such a solution would be an excellent combination of the style and the content.
 
 For those of you unfamiliar with CNN and deep learning, [CS231n](http://cs231n.stanford.edu/) from Stanford would be a great start point.
 
@@ -93,15 +93,15 @@ Before diving into the basic idea of the Deep Dream algorithm, I'd love to demon
 
 Actually, the deep dream algorithm is also closely related to the neural network, but unlike Neural Art Style, it does not condition the nonlinear image transformation on a style image. As an intern at Google first came up with this idea, he took a state-of-the-art image classification network, *GoogLeNet*, fed it with an image and as folks normally did in training neural networks, used the backpropagation algorithm<sup>[[9]](#ref9)</sup> to *update* the image. Gradually, an abstract painting emerged.
 
-Nowadays, people have develeoped a couple of novel deep dream variants and even built galleries to show their results (google it and you'll find a lot).
+Nowadays, people have develeoped a couple of novel deep dream variants and even built galleries to show their results (google it to find a lot).
 
 For those of you who want to try it yourselves, either access the original DeepDream repo from Google or [PyDream](https://github.com/WellyZhang/PyDream) from me. 
 
-**Let's get hands dirty on it!**
+**Just get hands dirty on it!**
 
 ## Conclusion
 
-From my point of view, the recently introduced Deep Neural Network Algorithms boost the development of computational art, though as a side effect, but it is still plausible that naughty computer scientists would keep exploring this interdisciplinary field, well, as an ultimate way to relax after being driven crazy tuning the hyperparameters of a neural network.
+From my point of view, the recently introduced Deep Neural Network Algorithms make prosperous the computational art, though as a side effect, but it is still plausible that naughty computer scientists would keep exploring this interdisciplinary field, well, as an ultimate way to relax after being driven crazy tuning the hyperparameters of a neural network.
 
 ## References
 
