@@ -85,15 +85,15 @@ header-img: "img/banner/about-banner.jpg"
         // en
         if(_hash == "#en"){
             $select.selectedIndex = 0;
-            $en.style.display = "block";
-            $zh.style.display = "none";
+            $en.style.display = "none";
+            $zh.style.display = "block";
         // en by default
         }
         if(_hash == "#zh"){
             // not trigger onChange, otherwise cause a loop call.
             $select.selectedIndex = 1;
-            $zh.style.display = "block";
-            $en.style.display = "none";
+            $zh.style.display = "none";
+            $en.style.display = "block";
         }
     }
 
