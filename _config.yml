@@ -105,5 +105,9 @@ friends: [
     {
         title: "Deng Cai",
         href: "http://www.cad.zju.edu.cn/home/dengcai/"
+    },
+    {
+        title: "Yixin Zhu",
+        href: "http://www.stat.ucla.edu/~yixinzhu/"
     }
 ]
