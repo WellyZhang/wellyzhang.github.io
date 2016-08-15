@@ -88,8 +88,7 @@ header-img: "img/banner/about-banner.jpg"
             $en.style.display = "none";
             $zh.style.display = "block";
         // en by default
-        }
-        if(_hash == "#zh"){
+        }else{
             // not trigger onChange, otherwise cause a loop call.
             $select.selectedIndex = 1;
             $zh.style.display = "none";
