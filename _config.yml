@@ -109,5 +109,9 @@ friends: [
     {
         title: "Yixin Zhu",
         href: "http://www.stat.ucla.edu/~yixinzhu/"
+    },
+    {
+        title: "Dit-Yan Yeung",
+        href: "https://www.cse.ust.hk/~dyyeung/www/Home.html"
     }
 ]
