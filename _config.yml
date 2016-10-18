@@ -58,12 +58,7 @@ duoshuo_username: wellyblog
 duoshuo_share: true                     
 # set to false if you want to use Comment without Sharing
 
-
-
-
 # Analytics settings
-# Baidu Analytics
-# ba_track_id: 036ab260afee2bb2935032e742a2b29e
 # Google Analytics
 ga_track_id: 'UA-76201806-1'            
 # Format: UA-xxxxxx-xx
@@ -78,40 +73,41 @@ sidebar-about-description: "Observe, Read, Think and Code"
 sidebar-avatar: /img/avatar.jpg
 # use absolute URL, seeing it's used in both `/` and `/about/`
 
-
-
 # Featured Tags
 featured-tags: true
 # whether or not using Feature-Tags
 featured-condition-size: 1
 # A tag will be featured if the size of it is more than this condition value
 
-
-
 # Friends
 friends: [
     {
-        title: "Yuke Zhu",
+        title: "Zhu, Yuke",
         href: "http://web.stanford.edu/~yukez/"
     },
     {
-        title: "Vikat Chi",
+        title: "Chi, Yuxin",
         href: "http://www.linkedin.com/in/%E7%91%9C%E9%A6%A8-%E6%B1%A0-28362793?authType=name&authToken=AOoT&goback=&trk=abook_conn"
     },
     {
-        title: "Song-Chun Zhu",
+        title: "Zhu, Song-Chun",
         href: "http://www.stat.ucla.edu/~sczhu/"
     },
     {
-        title: "Deng Cai",
+        title: "Cai, Deng",
         href: "http://www.cad.zju.edu.cn/home/dengcai/"
     },
     {
-        title: "Yixin Zhu",
+        title: "Zhu, Yixin",
         href: "http://www.stat.ucla.edu/~yixinzhu/"
     },
     {
-        title: "Dit-Yan Yeung",
+        title: "Yeung, Dit-Yan",
         href: "https://www.cse.ust.hk/~dyyeung/www/Home.html"
+    },
+    {
+        title: "Guo, Xinwen",
+        href: "http://xwguo.githuo.io"
+  
     }
 ]
