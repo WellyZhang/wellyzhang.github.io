@@ -82,31 +82,39 @@ featured-condition-size: 1
 # Friends
 friends: [
     {
-        title: "Zhu, Yuke",
+        title: "Xingjian Shi",
+        href: "http://home.cse.ust.hk/~xshiab/"
+    },
+    {
+        title: "Hao Wang",
+        href: "http://www.cse.ust.hk/~hwangaz/"
+    },
+    {
+        title: "Yuke Zhu",
         href: "http://web.stanford.edu/~yukez/"
     },
     {
-        title: "Chi, Yuxin",
+        title: "Yuxin Chi",
         href: "http://www.linkedin.com/in/%E7%91%9C%E9%A6%A8-%E6%B1%A0-28362793?authType=name&authToken=AOoT&goback=&trk=abook_conn"
     },
     {
-        title: "Zhu, Song-Chun",
+        title: "Song-Chun Zhu",
         href: "http://www.stat.ucla.edu/~sczhu/"
     },
     {
-        title: "Cai, Deng",
+        title: "Deng Cai",
         href: "http://www.cad.zju.edu.cn/home/dengcai/"
     },
     {
-        title: "Zhu, Yixin",
+        title: "Yixin Zhu",
         href: "http://www.stat.ucla.edu/~yixinzhu/"
     },
     {
-        title: "Yeung, Dit-Yan",
+        title: "Dit-Yan Yeung",
         href: "https://www.cse.ust.hk/~dyyeung/www/Home.html"
     },
     {
-        title: "Guo, Xinwen",
+        title: "Xinwen Guo",
         href: "http://xwguo.githuo.io"
   
     }
