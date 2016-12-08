@@ -3,3 +3,5 @@
 *.md~
 *.markdown~
 
+# For macOS
+*.DS_Store
