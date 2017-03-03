@@ -11,8 +11,6 @@ tags:
     - Reinforcement Learning
 ---
 
-> This is a brief summary of my CVPR submission on training a quadcopter to learn to track. Since the paper is still under review, CVPR 17 reviewers are **not** suggested to read our paper here.
-
 ## 1 Introduction
 
 We've witnessed the advent of a new era for robotics recently due to advances in control methods and reinforcement learning algorithms, among which **unmanned aerial vehicles** (UAV) have demonstrated promising potential for both civil and commercial applications. Drones that fly meters above the ground provide an intermediate solution for navigation between car-based imaging and satellite-based imaging and assist in tracking fast-moving objects on the ground, which poses problems for other land vehicles because of obstacles, adding to the practicability of a tracking system for drones.
@@ -60,8 +58,6 @@ We first verify the superiority of our supervised pretraining phase by comparing
 ## 5 Discussion
 
 Our experimental results have shown preliminary success of the algorithm. However, it still bears some limitations. A mature system should be tolerant to long-term occlusion and it's desirable that a low-level mapping could be learned to replace the PID controller. 
-
-For further details, please refer to our full paper (**discouraged** if you're a CVPR 17 reviewer). 
 
 ## 6 References
 
