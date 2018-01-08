@@ -3,7 +3,7 @@ layout:     post
 title:      "Excuse Me, Is Anyone Here?"
 subtitle:   "\"Hello World, Hello Blog\""
 date:       2016-04-24
-author:     "Welly Zhang"
+author:     "Chi Zhang"
 header-img: "img/banner/post-banner-hello.jpg"
 catalog: true
 tags:
@@ -14,7 +14,7 @@ tags:
 
 ## Hello
 
-折腾了老半天， Welly 的博客还是开通了。
+折腾了老半天， 我的博客还是开通了。
 
 博客这个东西兴起的时候貌似我还是个小学生，据说那个时候新浪微博吵得火热。这几年来，社交媒体变迁太迅速，大家老早就放弃博客这种东西，转向新兴的微博和微信了。或者是因为现代人时间都比较零碎吧，大家再也没那么多闲心写长文章，也没闲功夫看长文章了，因此微博微信这样的快餐式阅读消费就愈发受到人们的青睐。
 

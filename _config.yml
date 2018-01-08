@@ -1,10 +1,10 @@
 # Site settings
-title: Welly Blog
-SEOTitle: Welly Blog | 张老师的部落格
+title: Chi's Blog
+SEOTitle: Chi's Blog | 张驰的Blog
 header-img: img/banner/home-banner.jpg
 email: wellyzhangc@gmail.com
-description: "About Machine Learning, Deep Learning, Computer Vision, Life, Photo Gallery and Everything | Welly Zhang, Programmer, Machine Learning Enthusiast, Deep Learning Lover and Computer Vision Guy | @WellyZhang ML Everything"
-keyword: "Welly Zhang, 张驰, 张老师, @Vikat的男朋友，@WellyZhang, Blog, Internet, Machine Learning, Deep Learning, Computer Vision"
+description: "About Machine Learning, Computer Vision, Life, Photo Gallery and Everything | Chi Zhang, Programmer, Machine Learning Enthusiast and Computer Vision Guy | @WellyZhang ML Everything"
+keyword: "Chi Zhang, 张驰, @Vikat的男朋友，@WellyZhang, Blog, Internet, Machine Learning, Computer Vision"
 url: "http://wellyzhang.github.io"
 baseurl: ""                             
 
@@ -34,7 +34,7 @@ anchorjs: true
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 
@@ -82,6 +82,34 @@ featured-condition-size: 1
 # Friends
 friends: [
     {
+        title: "Mark Edmons",
+        href: "http://www.mjedmonds.com/"
+    },
+    {
+        title: "Feng Gao",
+        href: "https://fen9.github.io/"
+    },
+    {
+        title: "Hangxin Liu",
+        href: "https://liuhx111.github.io/"
+    },
+    {
+        title: "Xu Xie",
+        href: "https://xuxie1031.github.io/"
+    },
+    {
+        title: "Yixin Zhu",
+        href: "http://www.stat.ucla.edu/~yixinzhu/"
+    },
+    {
+        title: "Xinwen Guo",
+        href: "https://xwguo.github.io"
+    },
+    {
+        title: "Song-Chun Zhu",
+        href: "http://www.stat.ucla.edu/~sczhu/"
+    },
+    {
         title: "Xingjian Shi",
         href: "http://home.cse.ust.hk/~xshiab/"
     },
@@ -90,32 +118,19 @@ friends: [
         href: "http://www.wanghao.in"
     },
     {
-        title: "Yuke Zhu",
-        href: "http://web.stanford.edu/~yukez/"
-    },
-    {
-        title: "Yuxin Chi",
-        href: "http://www.linkedin.com/in/%E7%91%9C%E9%A6%A8-%E6%B1%A0-28362793?authType=name&authToken=AOoT&goback=&trk=abook_conn"
-    },
-    {
-        title: "Song-Chun Zhu",
-        href: "http://www.stat.ucla.edu/~sczhu/"
-    },
-    {
-        title: "Deng Cai",
-        href: "http://www.cad.zju.edu.cn/home/dengcai/"
-    },
-    {
-        title: "Yixin Zhu",
-        href: "http://www.stat.ucla.edu/~yixinzhu/"
+        title: "Siyi Li",
+        href: "http://lisiyi.me"
     },
     {
         title: "Dit-Yan Yeung",
         href: "https://www.cse.ust.hk/~dyyeung/www/Home.html"
     },
     {
-        title: "Xinwen Guo",
-        href: "https://xwguo.github.io"
-  
+        title: "Yuxin Chi",
+        href: "http://www.linkedin.com/in/%E7%91%9C%E9%A6%A8-%E6%B1%A0-28362793?authType=name&authToken=AOoT&goback=&trk=abook_conn"
+    },
+    {
+        title: "Deng Cai",
+        href: "http://www.cad.zju.edu.cn/home/dengcai/"
     }
 ]

@@ -3,7 +3,7 @@ layout:     post
 title:      "Demystify DeepWalk and Crack Its Code"
 subtitle:   "Brief Overview of DeepWalk"
 date:       2016-05-09
-author:     "Welly Zhang"
+author:     "Chi Zhang"
 header-img: "img/banner/post-banner-deepwalk.png" 
 catalog: true
 use-math: true

@@ -2,7 +2,7 @@
 layout:     post
 title:      "Pros and Cons of Parsing-Based App"
 date:       2016-10-23
-author:     "Welly Zhang"
+author:     "Chi Zhang"
 header-img: "img/banner/post-banner-browser.jpg"
 catalog: true
 tags: 
