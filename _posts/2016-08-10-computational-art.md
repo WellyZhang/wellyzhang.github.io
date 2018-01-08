@@ -3,7 +3,7 @@ layout:     post
 title:      "A Bite of Computational Art"
 subtitle:   "Convolutional and Neural Art"
 date:       2016-08-10
-author:     "Welly Zhang"
+author:     "Chi Zhang"
 header-img: "img/banner/post-banner-art.jpg" 
 catalog: true
 tags:

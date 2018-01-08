@@ -2,7 +2,7 @@
 layout:     post
 title:      "Training a Quadcopter to Autonomously Learn to Track"
 date:       2016-12-11
-author:     "Welly Zhang"
+author:     "Chi Zhang"
 header-img: "img/banner/post-banner-quadcopter-tracking.jpg"
 catalog: true
 use-math: true

@@ -3,7 +3,7 @@ layout:     post
 title:      "The Monty Hall Problem: A Bayesian Approach"
 subtitle:   "How I Attacked a Probabilistic Puzzle"
 date:       2016-05-06
-author:     "Welly Zhang"
+author:     "Chi Zhang"
 header-img: "img/banner/post-banner-mthall.jpg" 
 catalog: true
 use-math: true
