@@ -1,42 +1,209 @@
 ---
 layout: page
-description: "Not everything is meant to be. But everything is worth a try."
+title: About Me
+description: "Hi, I'm Chi Zhang."
+header-img: "img/banner/about-banner.jpg"
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
+<!-- English Version -->
+<div class="en post-container">
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
+<p><font color="red">News!</font> Join <a href="http://vcla.stat.ucla.edu/">VCLA@UCLA</a> as a Graduate Student Researcher.
+<br><font color="red">News!</font> Join Didi Research Institute as a machine learning engineer for autonomous vehicles.
+<br><font color="red">News!</font> Research intern at HKUST with <a href="https://www.cse.ust.hk/~dyyeung/www/Home.html">Professor Dit-Yan Yeung</a>.
+<br><font color="red">News!</font> Visiting scholar at <a href="http://vcla.stat.ucla.edu/">VCLA@UCLA</a> with <a href="http://www.stat.ucla.edu/~sczhu/">Professor Song-Chun Zhu</a>.
+</p>
+<blockquote>
+  <p>A Programmer and a Machine Learning Fan on the Go.</p>
+</blockquote>
+
+<h2 id="about-me">About Me</h2>
+
+<p>I’m Chi Zhang – a graduate student of <em>Department of Computer Science, University of California - Los Angeles</em>. I’m now a graduate student researcher at <em>Center for Vision, Cognition, Learning and Autonomy</em>, advised by <a href="http://www.stat.ucla.edu/~sczhu/">Professor Song-Chun Zhu</a>.</p>
+
+<p>My reseach interests include but are not limited to</p>
+
+<ul>
+  <li>Computer Vision
+  </li>
+  <li>Robotic Learning
+  </li>
 </ul>
+
+<p>I used to work with <a href="https://home.cse.ust.hk/~dyyeung/www/Home.html">Professor Dit-Yan Yeung</a> at <em>Hong Kong University of Science and Technology</em> and <a href="http://www.cad.zju.edu.cn/home/dengcai/">Professor Deng Cai</a> at my home institution, <em>Zhejiang University</em>.</p>
+
+<p>[<a href="https://github.com/WellyZhang">GitHub</a>] [<a href="/attach/CV_eng_blog.pdf">CV</a>] [<a href="mailto:wellyzhangc@gmail.com">Contact</a>]</p>
+
+<h2 id="experience">Experience</h2>
+
+<h4 id="research-experience">Research Experience</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Period</th>
+      <th style="text-align: center">Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2017.09-Present</td>
+      <td style="text-align: left">Graduate Student Researcher at VCLA, UCLA</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2016.09-2017.03</td>
+      <td style="text-align: left">Research Intern at Hong Kong University of Science and Technology</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2015.03-2016.06</td>
+      <td style="text-align: left">Research Assistant State Key Lab of CAD &amp; CG, Zhejiang University</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="professional-experience">Professional Experience</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Period</th>
+      <th style="text-align: center">Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2017.04-2017.06</td>
+      <td style="text-align: left">Machine Learning Engineer at Didi Research Institute for autonomous vehicles in Hangzhou, China</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2016.03-2017.09</td>
+      <td style="text-align: left">Software Development Coordinator at <a href="http://www.fengchelicai.com">Windmill Finance</a>, a FinTech start-up in Shenzhen, China</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="publications">Publications</h2>
+
+<h4 id="conferences">Conferences</h4>
+
+<ul>
+  <li>Siyi Li, Tianbo Liu, <strong>Chi Zhang</strong>, Dit-Yan Yeung, Shaojie Shen, <a href="https://www.ijcai.org/proceedings/2018/0685.pdf">Learning Unmanned Aerial Vehicle Control for Autonomous Target Following</a>, <em>Proceedings of the Twenty-Seventh International Joint Conference on Artificial Intelligence (<strong>IJCAI</strong>)</em>, 2018.</li>
+</ul>
+
+<h4 id="journals">Journals</h4>
+
+<ul>
+  <li>Zheqian Chen, <strong>Chi Zhang</strong>, Zhou Zhao, Chengwei Yao, Deng Cai, <a href="https://www.sciencedirect.com/science/article/pii/S0925231218300523">Question Retrieval for Community-based Question Answering via Heterogeneous Social Influential Network</a>, <em>Neurocomputing</em>, Volume 285, Pages 117-124.</li>
+</ul>
+
+<h4 id="patents">Patents</h4>
+
+<ul>
+  <li><a href="https://www.google.com/patents/CN104778746A?cl=zh">A Method of Exact 3D Modeling Based on Natural Gestures via Data Gloves</a>. Publication number: CN104778746 A.</li>
+</ul>
+
+<h4 id="presentations">Presentations</h4>
+
+<ul>
+  <li><a href="/attach/Detection_as_Regression.pdf">Detection as Regression</a></li>
+  <li><a href="/attach/Post-ANPR.pdf">Real-Time Automatic Number Plate Detection</a></li>
+</ul>
+
+<h2 id="projects">Projects</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Name</th>
+      <th style="text-align: center">Period</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="http://mxnet.io">MXNet</a></td>
+      <td style="text-align: center">2016.09-present</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Quadrotor Reinforcement Learning for Tracking</td>
+      <td style="text-align: center">2016.09-2016.11</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://github.com/WellyZhang/Darknet">Real-Time Automatic Number Plate Detection</a></td>
+      <td style="text-align: center">2016.02-2016.06</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://github.com/WellyZhang/termdict">TermDict, Web-Based Terminal Dictionary</a></td>
+      <td style="text-align: center">2016.10-present</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><a href="https://github.com/WellyZhang/ICJs">ICJs, Interpretive C++ for JavaScript</a></td>
+      <td style="text-align: center">2016.01-2016.04</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Exact 3D Modeling Based on Natural Gestures via Data Gloves</td>
+      <td style="text-align: center">2014.12-2015.04</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment"> 
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "huxblog" %}
+        data-thread-id="1187623191091085319"
+    {% else %}
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = '{{site.duoshuo_username}}';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
 {% endif %}
