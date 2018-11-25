@@ -3,13 +3,13 @@ title: Chi's Blog
 SEOTitle: Chi's Blog | 张驰的Blog
 header-img: img/banner/home-banner.jpg
 email: wellyzhangc@gmail.com
-description: "About Machine Learning, Computer Vision, Life, Photo Gallery and Everything | Chi Zhang, Programmer, Machine Learning Enthusiast and Computer Vision Guy | @WellyZhang ML Everything"
+description: "About Machine Learning, Computer Vision, Life, Photo Gallery and Everything | Chi Zhang, Programmer, Machine Learning and Computer Vision"
 keyword: "Chi Zhang, 张驰, @Vikat的男朋友，@WellyZhang, Blog, Internet, Machine Learning, Computer Vision"
 url: "http://wellyzhang.github.io"
 baseurl: ""                             
 
 # timezone
-timezone: CN
+timezone: America/Los_Angeles
 
 # SNS settings
 RSS: false
@@ -18,7 +18,6 @@ zhihu_username    : WellyZhang
 github_username   : WellyZhang
 twitter_username  : WellyZhangc
 #facebook_username : 
-
 
 
 # Build settings
@@ -31,11 +30,9 @@ anchorjs: true
 # if you want to customize anchor. check out line:181 of `post.html`
 
 
-
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 plugins: [jekyll-paginate]
-
 
 
 # Markdown settings
@@ -46,7 +43,6 @@ markdown: kramdown
 kramdown:
   input: GFM                            
 # use Github Flavored Markdown !important
-
 
 
 # Disqus settings
@@ -63,7 +59,6 @@ disqus_username: welly-homepage
 ga_track_id: 'UA-76201806-1'            
 # Format: UA-xxxxxx-xx
 ga_domain: wellyzhang.github.io
-
 
 
 # Sidebar settings
@@ -132,5 +127,9 @@ friends: [
     {
         title: "Deng Cai",
         href: "http://www.cad.zju.edu.cn/home/dengcai/"
+    },
+    {
+        title: "Zhenliang Zhang",
+        href: "http://zzlyw.github.io"
     }
 ]
