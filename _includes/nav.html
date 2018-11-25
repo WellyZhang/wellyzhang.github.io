@@ -19,11 +19,24 @@
                     <li>
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
-                    {% for page in site.pages %}{% if page.title and page.title != "About Me" %}
-                    <li>
-                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                    </li>
-                    {% endif %}{% endfor %}
+                    {% assign blog = 0 %}
+                    {% for page in site.pages %}
+                        {% if page.title and page.title != "About Me" %}
+                            {% if page.title == "Blog" %}
+                                <!-- Do not allow Blog to appear more than once in nav -->
+                                {% if blog == 0%}
+                                    {% assign blog = 1 %}
+                                    <li>
+                                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                                    </li>
+                                {% endif %}
+                            {% else %}
+                                <li>
+                                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </div>
