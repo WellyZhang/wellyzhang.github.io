@@ -1094,48 +1094,50 @@ img::-moz-selection {
 	overflow: hidden;
 }
 
-  .pub-img ul {
+.pub-img ul {
     list-style-type: none;
-  }
+}
 
-  .pub-img img {
-  	height: 100px;
-	  width: 100px;
+.pub-img img {
+    margin-top: 5px;
+    margin-right: 10px;
+  	height: 150px;
+    width: 150px;
     float: left;
-	}
+}
 
-	.pub-img li {
-	  padding: 10px 0 10px 0;
-		line-height: 1.8em;
-		font-size: 1em;
-		font-weight: 400;
+.pub-img li {
+    /* padding: 10px 0 10px 0; */
+	line-height: 1.8em;
+	font-size: 1em;
+	font-weight: 400;
     display: inline-block;
-	}
+}
 
-     .pub-img li a {
-	     margin: 0 10px 0 0px;
-	   }
+.pub-img li a {
+	margin: 0 10px 0 0px;
+}
 
-   .pub-img .publication {
-     padding: 0 20px 0 20px;
-     margin-top: -2px;
-     float: left;
-   }
+.pub-img .publication {
+    padding: 0 20px 0 20px;
+    margin-top: 0px;
+    float: left;
+}
 
-	 .pub-img .title {
-       font-weight: bold;
-     font-size: 1.1em;
-	 }
+.pub-img .title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
 
-	 .pub-img .venue {
-	   color: #555555;
-     font-weight: bold;
-	 }
+.pub-img .venue {
+	color: #555555;
+    font-weight: bold;
+}
 
-	 .pub-img .resources {
-	   color: #555555;
-	 }
+.pub-img .resources {
+	color: #555555;
+}
    
-	 .pub-img .special {
-	   color: #1abc9c;
-	 }
+.pub-img .special {
+	color: #1abc9c;
+}
