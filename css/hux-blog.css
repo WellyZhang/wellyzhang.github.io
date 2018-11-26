@@ -1087,3 +1087,55 @@ img::-moz-selection {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
+/* added by Chi Zhang for publications and projects */
+.pub-img {
+	width: 100%;
+	margin: 0 0 -10px 0;
+	overflow: hidden;
+}
+
+  .pub-img ul {
+    list-style-type: none;
+  }
+
+  .pub-img img {
+  	height: 100px;
+	  width: 100px;
+    float: left;
+	}
+
+	.pub-img li {
+	  padding: 10px 0 10px 0;
+		line-height: 1.8em;
+		font-size: 1em;
+		font-weight: 400;
+    display: inline-block;
+	}
+
+     .pub-img li a {
+	     margin: 0 10px 0 0px;
+	   }
+
+   .pub-img .publication {
+     padding: 0 20px 0 20px;
+     margin-top: -2px;
+     float: left;
+   }
+
+	 .pub-img .title {
+       font-weight: bold;
+     font-size: 1.1em;
+	 }
+
+	 .pub-img .venue {
+	   color: #555555;
+     font-weight: bold;
+	 }
+
+	 .pub-img .resources {
+	   color: #555555;
+	 }
+   
+	 .pub-img .special {
+	   color: #1abc9c;
+	 }
