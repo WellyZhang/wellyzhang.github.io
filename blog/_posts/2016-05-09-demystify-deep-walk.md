@@ -12,19 +12,19 @@ tags:
     - Data Mining
 ---
 
-## Introduction
+## 1. Introduction
 
-The algorithm of *DeepWalk*<sup>[[1](#ref1)]</sup> was first intruduced by Bryan Perozzi, Rami Al-Rfou and Steven Skiena from Stony Brook University. 
+The algorithm of *DeepWalk* [[1](#ref1)] was first intruduced by Bryan Perozzi, Rami Al-Rfou and Steven Skiena from Stony Brook University. 
 
 In a word, DeepWalk tries to learn good latent representations, or in *Natural Language Processing* terminology, embeddings, of vertices in a graph by local information obtained by truncated random walks.
 
 Then how they did it?
 
-## Motivation
+## 2. Motivation
 
 Their motivation actually comes from the wide application of the advanced language models that were first used to extract, unsupervisedly from raw texts, latent **distributed representations** for words.
 
-#### Distributed Representation
+#### 2.1. Distributed Representation
 
 To help you better understand what I mean by **distributed**, let me show you an example.
 
@@ -47,7 +47,7 @@ However, these representations do not encode any useful information about the se
 
 So, let's do it in a different way.
 
-Actually, there is no oracle that says the embedding must contain a single nonzero number in a fixed position. So as Yoshua Benjio<sup>[[2](#ref2)]</sup> proposed, why not use a arbitrary vector to represent a word?
+Actually, there is no oracle that says the embedding must contain a single nonzero number in a fixed position. So as Yoshua Bengio [[2](#ref2)] proposed, why not use a arbitrary vector to represent a word?
 
 Like, why couldn't "boy" be encoded $(0.12, 3.42, 0.012, 9.18, 14.00, -0.25)$?
 
@@ -55,13 +55,13 @@ Note how it all changes the way we see words computationally. This idea opens up
 
 But then comes another question -- how do we obtain such embeddings?
 
-#### Neural Language Model
+#### 2.2. Neural Language Model
 
-An explaination of word embeddings is not complete without reference to this paper<sup>[[3](#ref3)]</sup> from Tomas Mikolov. In this paper, researchers proposed an efficient algorithm to learn the embeddings aforementioned. They introduced two independent algorithms, **CBOW** and **SkipGram**. But since only SkipGram relates to the work of DeepWalk, I will simply leave the explaination of CBOW to the future.
+An explaination of word embeddings is not complete without reference to this paper [[3](#ref3)] from Tomas Mikolov. In this paper, researchers proposed an efficient algorithm to learn the embeddings aforementioned. They introduced two independent algorithms, **CBOW** and **SkipGram**. But since only SkipGram relates to the work of DeepWalk, I will simply leave the explaination of CBOW to the future.
 
 Formally, SkipGram tries to minimize the negative joint log probability of its context given the embedding of the center word,
 
-$$ minimize -log(P({v_{i-w} ... v_{i+w}} \mid v_i)),$$
+$$ \text{minimize} -\log(P({v_{i-w} ... v_{i+w}} \mid v_i)),$$
 
 where $w$ is half the size of the window that surrounds the center.
 
@@ -70,7 +70,7 @@ By modelling a probabilistic neural language model, or a 2-layer neural network 
 ![wordvec](/img/in-post/deepwalk/wordvec.jpg)
 <small class="img-hint">Figure 1. Visualizing word vectors. Notice that words with similar sematics are clustered together.</small>
 
-#### Random Walk
+#### 2.3. Random Walk
 
 The only essential compartment left to be explained is the concept of random walk. The phrase of random walk is usually encountered in literature of *stochastic process*. It basically describes a process of transfering randomly among different states or graph nodes.
 
@@ -78,7 +78,7 @@ Suppose you're in a node $n$ of a graph $G(V, E)$. The node has $m$ neighbours. 
 
 Well, I've covered all the basics and now let's move to the algorithm itself.
 
-## Putting All Together
+## 3. Putting All Together
 
 The algorithm bears the resemblence to Natural Language Processing in that it treats each node as a word in a sequence, which in the algorithm is produced by the random walk, hence the name DeepWalk.
 
@@ -91,11 +91,11 @@ In the algorithm, the authors built a binary hierarchical softmax tree to help s
 ![visdeepwalk](/img/in-post/deepwalk/vis.jpg)
 <small class="img-hint">Figure 2. Visualizing DeepWalk. The left plot shows the ground truth while the right demonstrates effective embeddings.</small>
 
-## DeepWalk Implementation
+## 4. DeepWalk Implementation
 
 To help thoroughly understand how the algorithm crunches the data, one should definitely read the source code. 
 
-In fact, there have already been a variety of implementations of the algorithm by different deep learning frameworks, including *Tensorflow* and *Keras* on GitHub. I would personally suggest the original repository<sup>[[4](#ref4)]</sup> by the authors since it not only retains the source ideas but also shows minimum dependency on other packages. I also have a personal fork<sup>[[5](#ref5)]</sup> that provide a near-complete comments on the formatted source code.
+In fact, there have already been a variety of implementations of the algorithm by different deep learning frameworks, including *Tensorflow* and *Keras* on GitHub. I would personally suggest the original repository [[4](#ref4)] by the authors since it not only retains the source ideas but also shows minimum dependency on other packages. I also have a personal fork [[5](#ref5)] that provide a near-complete comments on the formatted source code.
 
 There are several source files in the deepwalk directory.
 
@@ -122,9 +122,9 @@ model = Word2Vec(walks, size = args.representation_size,
         workers = args.workers)
 ```
 
-However, details are explained in the corresponding files. If you find it a bit hard to understand the code, feel free to access my fully-commented fork here<sup>[[5](#ref5)]</sup>.
+However, details are explained in the corresponding files. If you find it a bit hard to understand the code, feel free to access my fully-commented fork here [[5](#ref5)].
 
-## Conclusion
+## 5. Conclusion
 
 DeepWalk has made great contribution in the field of network learning and community-based data mining due to its accuracy and scalability.
 
@@ -134,9 +134,9 @@ If everything goes well, I will update our work on how DeepWalk contributes to k
 
 ## References
 
-1. <a id="ref1">[DeepWalk: Online Learning of Social Representations](http://arxiv.org/abs/1403.6652)</a>
-2. <a id="ref2">[A Neural Probabilistic Language Model](http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)</a>
-3. <a id="ref3">[Efficient Estimation of Word Representations in Vector Space](http://arxiv.org/abs/1301.3781)</a>
-4. <a id="ref4">[DeepWalk - Deep Learning for Graphs](https://github.com/phanein/deepwalk)</a>
-5. <a id="ref5">[Fully-commented DeepWalk](https://github.com/WellyZhang/DeepWalk)</a>
+[1] <a id="ref1">[Perozzi, B., Al-Rfou, R., & Skiena, S. (2014, August). Deepwalk: Online learning of social representations. In Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 701-710). ACM.](http://arxiv.org/abs/1403.6652)</a>  
+[2] <a id="ref2">[Bengio, Y., Ducharme, R., Vincent, P., & Jauvin, C. (2003). A neural probabilistic language model. Journal of machine learning research, 3(Feb), 1137-1155.](http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)</a>  
+[3] <a id="ref3">[Mikolov, T., Chen, K., Corrado, G., & Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781.](http://arxiv.org/abs/1301.3781)</a>  
+[4] <a id="ref4">[GitHub. DeepWalk - Deep Learning for Graphs.](https://github.com/phanein/deepwalk)</a>  
+[5] <a id="ref5">[GitHub. Fully-commented DeepWalk.](https://github.com/WellyZhang/DeepWalk)</a>  
 
