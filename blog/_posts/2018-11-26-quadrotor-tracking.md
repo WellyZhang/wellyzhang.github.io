@@ -11,6 +11,8 @@ tags:
     - Reinforcement Learning
 ---
 
+> This a summary of our IJCAI 2018 [paper](https://www.ijcai.org/proceedings/2018/0685.pdf) in training a quadcopter to learn to track.
+
 ## 1. Introduction
 
 We've witnessed the advent of a new era for robotics recently due to advances in control methods and reinforcement learning algorithms, where **unmanned aerial vehicles** (UAV) have demonstrated promising potential for both civil and commercial applications. Drones that fly meters above the ground provide an intermediate solution for navigation between car-based imaging and satellite-based imaging and assist in tracking fast-moving objects on the ground. These moving objects pose problems for other land vehicles because of obstacles, making a tracking system of drones desirable.
@@ -64,6 +66,6 @@ Our experimental results have shown preliminary success of the algorithm. Howeve
 
 [1] <a ref="ref1">[Karpathy, A. (2016). Deep reinforcement learning: Pong from pixels.](http://karpathy.github.io/2016/05/31/rl)</a>  
 [2] <a ref="ref2">[Sutton, R. S., & Barto, A. G. (2018). Reinforcement learning: An introduction. MIT press.](http://incompleteideas.net/book/bookdraft2017nov5.pdf)</a>  
-[3] <a ref="ref3">[Li, S., Liu, T., Zhang, C., Yeung, D. Y., & Shen, S. (2017). Learning Unmanned Aerial Vehicle Control for Autonomous Target Following. arXiv preprint arXiv:1709.08233.](https://www.ijcai.org/proceedings/2018/0685.pdf)</a>
+[3] <a ref="ref3">[Li, S., Liu, T., Zhang, C., Yeung, D. Y., & Shen, S. (2018). Learning Unmanned Aerial Vehicle Control for Autonomous Target Following. In Proceedings of the Twenty-Seventh International Joint Conference on Artificial Intelligence.](https://www.ijcai.org/proceedings/2018/0685.pdf)</a>
 
 
