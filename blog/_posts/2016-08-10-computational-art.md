@@ -14,9 +14,9 @@ tags:
 
 > This blog post depicts my personal experience in playing with the computational art, or to be more precise, algorithms that populate pictures with elements of aesthetics. It really is great **fun** for me, and I'd love to share it.
 
-## Introduction
+## 1. Introduction
 
-> Computational Art, or Algorithmic Art, is an emerging new field that uses mathematical algorithms and computers to generate imaginative and abstract images.<sup>[[1](#ref1)]</sup> 
+> Computational Art, or Algorithmic Art, is an emerging new field that uses mathematical algorithms and computers to generate imaginative and abstract images [[1](#ref1)].
 
 As folks in Willamette University define it, computational art renders itself somewhat in the intersection of computer science and aesthetics. This interdisciplinary brand-new field requires both a mathematical and computational background and an insight of art. Some very elementary algorithms find their roots in medical image processing, where *erosion*, *opening* and *closure* are realized to be widely used in preprocessing, postprocessing and segmentation.
 
@@ -24,9 +24,9 @@ But nowadays, computer scientists, equipped with powerful computational resource
 
 In this blog post, I personally play with three algorithms, that is, ***Pencil Sketch***, ***Neural Art Style*** and ***Deep Dream***. Now I'd like to share them with you guys.
 
-## Pencil Sketch
+## 2. Pencil Sketch
 
-The Pencial Sketch algorithm that takes a real-world picture and transforms it into a pencil-sketch style was first introduced by Cewu Lu et al in [[2]](#ref2).
+The Pencial Sketch algorithm that takes a real-world picture and transforms it into a pencil-sketch style was first introduced by Cewu Lu et al in [[2](#ref2)].
 
 To help giving a taste of the algorithm, I'd present several of my test cases as follows.
 
@@ -43,17 +43,17 @@ I do have more examples, but readers are strongly encouraged to try cases of the
 
 As shown above, the algorithm is also divided into two stages, one that generates line drawing with strokes and another that applies tone mapping and convolves the line drawing and tone mapping to produce the colorful image.
 
-The first stage consists of four steps. In the first step, the program performs the edge detection, which in the paper is implemented by the second-order gradient. However, this is not fixed and other edge detection algorithms, such as Canny operator<sup>[[3]](#ref3)</sup> and Sobel operator<sup>[[4]](#ref4)</sup>, could be used. Then comes the convolution: the edge graph is convolved with eight equally distributed line kernels around a circle. After Non-Maximum-Suppression(NMS)-aware classification (no matter how I'm opposed to calling it *classification*), eight line kernels are again convolved with the eight classification responses and summed to yield the line drawing, *S'*. Proper postproessing would give us the grayscale image *S*.
+The first stage consists of four steps. In the first step, the program performs the edge detection, which in the paper is implemented by the second-order gradient. However, this is not fixed and other edge detection algorithms, such as Canny operator [[3](#ref3)] and Sobel operator [[4](#ref4)], could be used. Then comes the convolution: the edge graph is convolved with eight equally distributed line kernels around a circle. After Non-Maximum-Suppression(NMS)-aware classification (no matter how I'm opposed to calling it *classification*), eight line kernels are again convolved with the eight classification responses and summed to yield the line drawing, *S'*. Proper postproessing would give us the grayscale image *S*.
 
 In the second stage, the author combines the histogram tone mapping and the rendering. The author gathers many color distributions from colorful sketch images and summarizes the pattern by predefined distribution functions. A histogram matching is thus applied accordingly. However, to better render the textures, efforts are needed. In the paper, a loss function is desigend to work out an intermediate kernel *T*. The kernel again convolves with *S* and finally the colorful image comes out. 
 
-This is just a brief overview of the steps of the algorithm and much more details are provided in the paper<sup>[[2]](#ref2)</sup>.
+This is just a brief overview of the steps of the algorithm and much more details are provided in the paper [[2](#ref2)].
 
-## Neural Art Style
+## 3. Neural Art Style
 
-Ever since the German computer scientists published their work<sup>[[5]](#ref5)</sup> on *arXiv*, enthusiasts around the world have been hurrying to implement the algorithm in their own languages and generate lots and lots of customized pictures. 
+Ever since the German computer scientists published their work [[5](#ref5)] on *arXiv*, enthusiasts around the world have been hurrying to implement the algorithm in their own languages and generate lots and lots of customized pictures. 
 
-A famous [implementation](https://github.com/jcjohnson/neural-style) dates to Justin Johnson from Stanford by Torch. But I also prefer to present my own implementation here by Python, the [PyNeuralArt](https://github.com/WellyZhang/PyNeuralArt).
+A famous [implementation](https://github.com/jcjohnson/neural-style) in Torch was provided by Justin Johnson from Stanford. But I also prefer to present my own Python implementation here, the [PyNeuralArt](https://github.com/WellyZhang/PyNeuralArt).
 
 After setting the style image of *Starry Night* 
 
@@ -76,13 +76,13 @@ Many people might wonder: why is it called ***NEURAL***?
 
 Actually, this algorithm leverages the most advanced technology of *neural networks* in *deep learning*.
 
-> In machine learning and cognitive science, an *artificial neural network* (**ANN**) is a network inspired by biological neural networks (the central nervous systems of animals, in particular the brain) which are used to estimate or approximate functions that can depend on a large number of inputs that are generally unknown.<sup>[[6]](#ref6)</sup>
+> In machine learning and cognitive science, an *artificial neural network* (**ANN**) is a network inspired by biological neural networks (the central nervous systems of animals, in particular the brain) which are used to estimate or approximate functions that can depend on a large number of inputs that are generally unknown [[6](#ref6)].
 
-The algorithm first extracts image feature maps of the style image and the content image from a *Convolutional Neural Network*<sup>[[7]](#ref7)</sup>, or **CNN**, pretrained for image classification. Then a white noise image is fed to the neural network and by a properly designed loss function fusing the style image features and content image features and an optimizer, such as *L-BFGS*<sup>[[8]](#ref8)</sup>, a somewhat optimum solution would be found. If you are lucky enough setting the hyperparameters and training the network, such a solution would be an excellent combination of the style and the content.
+The algorithm first extracts image feature maps of the style image and the content image from a *Convolutional Neural Network* [[7](#ref7)], or **CNN**, pretrained for image classification. Then a white noise image is fed to the neural network and by a properly designed loss function fusing the style image features and content image features and an optimizer, such as *L-BFGS* [[8](#ref8)], a somewhat optimum solution would be found. If you are lucky enough setting the hyperparameters and training the network, such a solution would be an excellent combination of the style and the content.
 
 For those of you unfamiliar with CNN and deep learning, [CS231n](http://cs231n.stanford.edu/) from Stanford would be a great start point.
 
-## Deep Dream
+## 4. Deep Dream
 
 Before diving into the basic idea of the Deep Dream algorithm, I'd love to demonstrate here one example to give you guys a feel of what it is.
 
@@ -91,7 +91,7 @@ Before diving into the basic idea of the Deep Dream algorithm, I'd love to demon
 ![Output](https://github.com/WellyZhang/PyDream/blob/master/examples/output.jpg?raw=true)
 <small class="img-hint">Dream</small>
 
-Actually, the deep dream algorithm is also closely related to the neural network, but unlike Neural Art Style, it does not condition the nonlinear image transformation on a style image. As an intern at Google first came up with this idea, he took a state-of-the-art image classification network, *GoogLeNet*, fed it with an image and as folks normally did in training neural networks, used the backpropagation algorithm<sup>[[9]](#ref9)</sup> to *update* the image. Gradually, an abstract painting emerged.
+Actually, the deep dream algorithm is also closely related to the neural network, but unlike Neural Art Style, it does not condition the nonlinear image transformation on a style image. As an intern at Google first came up with this idea, he took a state-of-the-art image classification network, *GoogLeNet*, fed it with an image and as folks normally did in training neural networks, used the backpropagation algorithm [[9](#ref9)] to *update* the image. Gradually, an abstract painting emerged.
 
 Nowadays, people have develeoped a couple of novel deep dream variants and even built galleries to show their results (google it to find a lot).
 
@@ -99,18 +99,18 @@ For those of you who want to try it yourselves, either access the original DeepD
 
 **Just get hands dirty on it!**
 
-## Conclusion
+## 5. Conclusion
 
 From my point of view, the recently introduced Deep Neural Network Algorithms make prosperous the computational art, though as a side effect, but it is still plausible that naughty computer scientists would keep exploring this interdisciplinary field, well, as an ultimate way to relax after being driven crazy tuning the hyperparameters of a neural network.
 
 ## References
 
-1. <a id="ref1">[Computational Art on CS145, Willamette University](https://www.willamette.edu/~gorr/classes/cs145Fa10/AlgArtWeb/index.htm)</a>
-2. <a id="ref2">Cewu Lu, Li Xu, Jiaya Jia. Combining Sketch and Tone for Pencil Drawing Production. In *Proceedings of the Symposium on Non-Photorealistic Animation and Rendering*. Eurographics Association, 2012: 65-73.</a>
-3. <a id="ref3">[Canny edge detector, Wikipedia](https://en.wikipedia.org/wiki/Canny_edge_detector)</a>
-4. <a id="ref4">[Sobel operator, Wikipedia](https://en.wikipedia.org/wiki/Sobel_operator)</a>
-5. <a id="ref5">Leon A. Gatys, Alexander S. Ecker, Matthias Bethge. A Neural Algorithm of Artistic Style. *arXiv*: 1508.06576.</a>
-6. <a id="ref6">[Artificial neural network, Wikipedia](https://en.wikipedia.org/wiki/Artificial_neural_network)</a>
-7. <a id="ref7">[Convolutional neural network, Wikipedia](https://en.wikipedia.org/wiki/Convolutional_neural_network)</a>
-8. <a id="ref8">[Limited-memory BFGS, Wikipedia](https://en.wikipedia.org/wiki/Limited-memory_BFGS)</a>
-9. <a id="ref9">[Backpropagation, Wikipedia](https://en.wikipedia.org/wiki/Backpropagation)</a>
+[1] <a id="ref1">[Willamette University. Computational Art on CS145.](https://www.willamette.edu/~gorr/classes/cs145Fa10/AlgArtWeb/index.htm)</a>  
+[2] <a id="ref2">[Lu, C., Xu, L., & Jia, J. (2012, June). Combining sketch and tone for pencil drawing production. In Proceedings of the Symposium on Non-Photorealistic Animation and Rendering (pp. 65-73). Eurographics Association.](http://www.cse.cuhk.edu.hk/leojia/projects/pencilsketch/npar12_pencil.pdf)</a>  
+[3] <a id="ref3">[Wikipedia. Canny edge detector.](https://en.wikipedia.org/wiki/Canny_edge_detector)</a>  
+[4] <a id="ref4">[Wikipedia. Sobel operator.](https://en.wikipedia.org/wiki/Sobel_operator)</a>  
+[5] <a id="ref5">[Gatys, L. A., Ecker, A. S., & Bethge, M. (2015). A neural algorithm of artistic style. arXiv preprint arXiv:1508.06576.](https://arxiv.org/pdf/1508.06576)</a>  
+[6] <a id="ref6">[Wikipedia. Artificial neural network.](https://en.wikipedia.org/wiki/Artificial_neural_network)</a>  
+[7] <a id="ref7">[Wikipedia. Convolutional neural network.](https://en.wikipedia.org/wiki/Convolutional_neural_network)</a>  
+[8] <a id="ref8">[Wikipedia. Limited-memory BFGS.](https://en.wikipedia.org/wiki/Limited-memory_BFGS)</a>  
+[9] <a id="ref9">[Wikipedia. Backpropagation.](https://en.wikipedia.org/wiki/Backpropagation)</a>  

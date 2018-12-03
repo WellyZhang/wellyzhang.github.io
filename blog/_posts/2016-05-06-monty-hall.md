@@ -12,7 +12,7 @@ tags:
     - Stats
 ---
 
-## How I Came Across Monty Hall
+## 1. How I Came Across Monty Hall
 
 It is actually pretty straightforward: a similar problem showed up in Problem Set 1 of the course *Introduction to Data Mining*. It all came as follows:
 
@@ -20,13 +20,13 @@ It is actually pretty straightforward: a similar problem showed up in Problem Se
 
 Well, for those of you familiar with ***Monty Hall Problem***, this actually **IS** one with only modifications of the background.
 
-FYI, the Monty Hall Problem<sup>[[1]](#ref1)</sup> is first proposed in the *Parade* magazine.
+FYI, the Monty Hall Problem [[1](#ref1)] is first proposed in the *Parade* magazine.
 
 > Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 2, which has a goat. He then says to you, "Do you want to pick door No. 3?" Is it to your advantage to switch your choice?
 
 So, anyway, what is your choice?
 
-## Bayesian Statistics
+## 2. Bayesian Statistics
 
 Allright, before we proceed to the solution, let's first have a brief review of Bayesian Statistics. 
 
@@ -52,7 +52,7 @@ $$P(B) = \int P(b) {\rm d}b.$$
 
 OK, now that you are equipped with fundamentals of statistics, let's move on!
 
-## The Bayesian Approach
+## 3. The Bayesian Approach
 
 Let's view the Monty Hall problem in its original scenario.
 
@@ -95,7 +95,7 @@ AH! It seems that **we should switch**!
 
 Quite counterintuitive!
 
-## The Frequentist Approach
+## 4. The Frequentist Approach
 
 It was actually a bit confusing when I made my first attempt to understand it from a Bayesian view, although it turned out easier if you simply listed all cases and counted the number of wins.
 
@@ -107,11 +107,11 @@ Let me show you.
 | Goat | Car | Goat | Lose | **Win** |
 | Goat | Goat | Car | Lose | **Win** |
 
-<small class="img-hint">Table from [[1]](#ref1)</small>
+<small class="img-hint">Table from [[1](#ref1)]</small>
 
 As illustrated above, $P(No. 1 = car \mid Door = goat) = {1 \over 3}$.
 
-## Naive Generalization
+## 5. Naive Generalization
 
 Now that we have worked out the case when there are only 3 doors with only 1 containing the prize, it's natural that we seek the solution when there are more doors and more than 1 prizes.
 
@@ -126,7 +126,7 @@ $$ P = {m \over n}.$$
 If this is larger than $1 \over 2$ then we stick, otherwise we switch.
 
 ## References
-1. <a id="ref1">[Monty Hall problem - Wikipedia, The Free Encyclopedia](https://en.wikipedia.org/wiki/Monty_Hall_problem)</a>
+[1] <a id="ref1">[Wikipedia. Monty Hall problem.](https://en.wikipedia.org/wiki/Monty_Hall_problem)</a>  
 
 
 
