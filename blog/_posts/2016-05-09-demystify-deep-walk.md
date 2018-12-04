@@ -14,7 +14,7 @@ tags:
 
 ## 1. Introduction
 
-The algorithm of *DeepWalk* [[1](#ref1)] was first intruduced by Bryan Perozzi, Rami Al-Rfou and Steven Skiena from Stony Brook University. 
+The algorithm of *DeepWalk* [[1](#ref1)] was first introduced by Bryan Perozzi, Rami Al-Rfou and Steven Skiena from Stony Brook University. 
 
 In a word, DeepWalk tries to learn good latent representations, or in *Natural Language Processing* terminology, embeddings, of vertices in a graph by local information obtained by truncated random walks.
 
@@ -51,13 +51,13 @@ Actually, there is no oracle that says the embedding must contain a single nonze
 
 Like, why couldn't "boy" be encoded $(0.12, 3.42, 0.012, 9.18, 14.00, -0.25)$?
 
-Note how it all changes the way we see words computationally. This idea opens up a whole N-dimensional space for us to represent each word. And as you might expect, semantics and syntatics could now manifest themselves as clusters in the space.
+Note how it all changes the way we see words computationally. This idea opens up a whole N-dimensional space for us to represent each word. And as you might expect, semantics and syntactics could now manifest themselves as clusters in the space.
 
 But then comes another question -- how do we obtain such embeddings?
 
 #### 2.2. Neural Language Model
 
-An explaination of word embeddings is not complete without reference to this paper [[3](#ref3)] from Tomas Mikolov. In this paper, researchers proposed an efficient algorithm to learn the embeddings aforementioned. They introduced two independent algorithms, **CBOW** and **SkipGram**. But since only SkipGram relates to the work of DeepWalk, I will simply leave the explaination of CBOW to the future.
+An explanation of word embeddings is not complete without reference to this paper [[3](#ref3)] from Tomas Mikolov. In this paper, researchers proposed an efficient algorithm to learn the embeddings aforementioned. They introduced two independent algorithms, **CBOW** and **SkipGram**. But since only SkipGram relates to the work of DeepWalk, I will simply leave the explanation of CBOW to the future.
 
 Formally, SkipGram tries to minimize the negative joint log probability of its context given the embedding of the center word,
 
@@ -68,19 +68,19 @@ where $w$ is half the size of the window that surrounds the center.
 By modelling a probabilistic neural language model, or a 2-layer neural network that independently predicts the distribution of surrounding words and minimizing the log-prob, we could learn very powerful and meaningful embeddings.
 
 ![wordvec](/img/in-post/deepwalk/wordvec.jpg)
-<small class="img-hint">Figure 1. Visualizing word vectors. Notice that words with similar sematics are clustered together.</small>
+<small class="img-hint">Figure 1. Visualizing word vectors. Notice that words with similar semantics are clustered together.</small>
 
 #### 2.3. Random Walk
 
-The only essential compartment left to be explained is the concept of random walk. The phrase of random walk is usually encountered in literature of *stochastic process*. It basically describes a process of transfering randomly among different states or graph nodes.
+The only essential compartment left to be explained is the concept of random walk. The phrase of random walk is usually encountered in literature of *stochastic process*. It basically describes a process of transferring randomly among different states or graph nodes.
 
-Suppose you're in a node $n$ of a graph $G(V, E)$. The node has $m$ neighbours. Then, in a completely random walk, you transfer to any of your neighbour with a probability of $1 \over m$.
+Suppose you're in a node $n$ of a graph $G(V, E)$. The node has $m$ neighbors. Then, in a completely random walk, you transfer to any of your neighbor with a probability of $1 \over m$.
 
 Well, I've covered all the basics and now let's move to the algorithm itself.
 
 ## 3. Putting All Together
 
-The algorithm bears the resemblence to Natural Language Processing in that it treats each node as a word in a sequence, which in the algorithm is produced by the random walk, hence the name DeepWalk.
+The algorithm bears the resemblance to Natural Language Processing in that it treats each node as a word in a sequence, which in the algorithm is produced by the random walk, hence the name DeepWalk.
 
 The entire algorithm is illustrated as follows:
 
