@@ -126,6 +126,7 @@ $$ P = {m \over n}.$$
 If this is larger than $1 \over 2$ then we stick, otherwise we switch.
 
 ## References
+
 [1] <a id="ref1">[Wikipedia. Monty Hall problem.](https://en.wikipedia.org/wiki/Monty_Hall_problem)</a>  
 
 
