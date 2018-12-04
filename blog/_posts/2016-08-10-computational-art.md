@@ -26,7 +26,7 @@ In this blog post, I personally play with three algorithms, that is, ***Pencil S
 
 ## 2. Pencil Sketch
 
-The Pencial Sketch algorithm that takes a real-world picture and transforms it into a pencil-sketch style was first introduced by Cewu Lu et al in [[2](#ref2)].
+The Pencil Sketch algorithm that takes a real-world picture and transforms it into a pencil-sketch style was first introduced by Cewu Lu et al in [[2](#ref2)].
 
 To help giving a taste of the algorithm, I'd present several of my test cases as follows.
 
@@ -43,9 +43,9 @@ I do have more examples, but readers are strongly encouraged to try cases of the
 
 As shown above, the algorithm is also divided into two stages, one that generates line drawing with strokes and another that applies tone mapping and convolves the line drawing and tone mapping to produce the colorful image.
 
-The first stage consists of four steps. In the first step, the program performs the edge detection, which in the paper is implemented by the second-order gradient. However, this is not fixed and other edge detection algorithms, such as Canny operator [[3](#ref3)] and Sobel operator [[4](#ref4)], could be used. Then comes the convolution: the edge graph is convolved with eight equally distributed line kernels around a circle. After Non-Maximum-Suppression(NMS)-aware classification (no matter how I'm opposed to calling it *classification*), eight line kernels are again convolved with the eight classification responses and summed to yield the line drawing, *S'*. Proper postproessing would give us the grayscale image *S*.
+The first stage consists of four steps. In the first step, the program performs the edge detection, which in the paper is implemented by the second-order gradient. However, this is not fixed and other edge detection algorithms, such as Canny operator [[3](#ref3)] and Sobel operator [[4](#ref4)], could be used. Then comes the convolution: the edge graph is convolved with eight equally distributed line kernels around a circle. After Non-Maximum-Suppression(NMS)-aware classification (no matter how I'm opposed to calling it *classification*), eight line kernels are again convolved with the eight classification responses and summed to yield the line drawing, *S'*. Proper postprocessing would give us the grayscale image *S*.
 
-In the second stage, the author combines the histogram tone mapping and the rendering. The author gathers many color distributions from colorful sketch images and summarizes the pattern by predefined distribution functions. A histogram matching is thus applied accordingly. However, to better render the textures, efforts are needed. In the paper, a loss function is desigend to work out an intermediate kernel *T*. The kernel again convolves with *S* and finally the colorful image comes out. 
+In the second stage, the author combines the histogram tone mapping and the rendering. The author gathers many color distributions from colorful sketch images and summarizes the pattern by predefined distribution functions. A histogram matching is thus applied accordingly. However, to better render the textures, efforts are needed. In the paper, a loss function is designed to work out an intermediate kernel *T*. The kernel again convolves with *S* and finally the colorful image comes out. 
 
 This is just a brief overview of the steps of the algorithm and much more details are provided in the paper [[2](#ref2)].
 
@@ -93,7 +93,7 @@ Before diving into the basic idea of the Deep Dream algorithm, I'd love to demon
 
 Actually, the deep dream algorithm is also closely related to the neural network, but unlike Neural Art Style, it does not condition the nonlinear image transformation on a style image. As an intern at Google first came up with this idea, he took a state-of-the-art image classification network, *GoogLeNet*, fed it with an image and as folks normally did in training neural networks, used the backpropagation algorithm [[9](#ref9)] to *update* the image. Gradually, an abstract painting emerged.
 
-Nowadays, people have develeoped a couple of novel deep dream variants and even built galleries to show their results (google it to find a lot).
+Nowadays, people have developed a couple of novel deep dream variants and even built galleries to show their results (google it to find a lot).
 
 For those of you who want to try it yourselves, either access the original DeepDream repo from Google or [PyDream](https://github.com/WellyZhang/PyDream) from me. 
 
