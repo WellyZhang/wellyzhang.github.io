@@ -28,7 +28,7 @@ So, anyway, what is your choice?
 
 ## 2. Bayesian Statistics
 
-Allright, before we proceed to the solution, let's first have a brief review of Bayesian Statistics. 
+Alright, before we proceed to the solution, let's first have a brief review of Bayesian Statistics. 
 
 The following equation, or [**Bayes' Theorem**](https://en.wikipedia.org/wiki/Bayes%27_theorem), lies at the heart of Bayesian Statistics,
 
@@ -38,7 +38,7 @@ It basically is just a reformulation of the condition probability equation,
 
 $$P(A, B) = P(A \mid B) \times P(B) = P(B \mid A) \times P(A).$$
 
-Under independency, the equation just reduces to
+Under independence, the equation just reduces to
 
 $$P(A, B) = P(A) \times P(B),$$
 
@@ -56,7 +56,7 @@ OK, now that you are equipped with fundamentals of statistics, let's move on!
 
 Let's view the Monty Hall problem in its original scenario.
 
-To decide whether we should switch, we should compare probabilities of $P(No. 1 = car \mid No. 2 = goat)$ and $P(No. 3 = car \mid No. 2 = goat)$. And these are just conditional probabilites that require the Bayes' Theorem. Note that
+To decide whether we should switch, we should compare probabilities of $P(No. 1 = car \mid No. 2 = goat)$ and $P(No. 3 = car \mid No. 2 = goat)$. And these are just conditional probabilities that require the Bayes' Theorem. Note that
 
 $$P(No. 3 = car \mid No. 2 = goat) = 1 - P(No. 1 = car \mid No. 2 = goat).$$
 
@@ -93,7 +93,7 @@ $$P(No. 1 = car \mid No. 2 = goat) = \frac{1 \times {1 \over 3}}{1} = {1 \over 3
 
 AH! It seems that **we should switch**!
 
-Quite counterintuitive!
+Quite counter-intuitive!
 
 ## 4. The Frequentist Approach
 
@@ -126,6 +126,7 @@ $$ P = {m \over n}.$$
 If this is larger than $1 \over 2$ then we stick, otherwise we switch.
 
 ## References
+
 [1] <a id="ref1">[Wikipedia. Monty Hall problem.](https://en.wikipedia.org/wiki/Monty_Hall_problem)</a>  
 
 
