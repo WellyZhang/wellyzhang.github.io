@@ -7,6 +7,7 @@ header-img: "img/banner/post-banner-mirroring.jpg"
 catalog: true
 use-math: true
 tags: 
+    - AoG
     - Reinforcement Learning
 ---
 
@@ -80,7 +81,7 @@ In the experiment, we use a tactile glove to collect human demonstrations of ope
 For numerical results and detailed analysis, please refer to our full [paper](./attach/aaai19liu.pdf). If you find the paper helpful, please cite us.
 ```
 @inproceedings{liu2019mirroring,
-    author={Liu, Hangxin, Zhang, Chi, Zhu, Yixin, Zhu, Song-Chun},
+    author={Liu, Hangxin, Zhang, Chi, Zhu, Yixin, Jiang, Chenfanfu, Zhu, Song-Chun},
     title={Mirroring without Overimitation: Learning Functionally Equivalent Manipulation Actions},
     booktitle={Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
     year={2019}
