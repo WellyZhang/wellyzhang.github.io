@@ -12,7 +12,7 @@ tags:
     - Computer Vision
 ---
 
-> This post briefly summarizes our work on trading off speed, flexibility, and quality in neural style transfer. For further details, please refer to our full [paper](./attach/aaai19zhang.pdf).
+> This post briefly summarizes our work on trading off speed, flexibility, and quality in neural style transfer. For further details, please refer to our AAAI 2019 [paper](./attach/aaai19zhang.pdf).
 
 ![comparison](/img/in-post/MetaStyle/compare.png)
 <small class="img-hint">Figure 1. Stylization comparison between our method and others.</small>
@@ -31,7 +31,7 @@ We have witnessed an unprecedented booming in the research area of artistic styl
 
 We find it considerably difficult to balance the trade-off well merely using a single feed-forward step and try to find, instead, an algorithm that could ***adapt quickly to any style, while the adapted model maintains high efficiency and good image quality***. 
 
-Motivated by this idea, we propose a novel method, coined ***MetaStyle***, which formulates the neural style transfer as a *bilevel optimization* problem and combines learning with only a few post-processing update steps to adapt to a fast approximation model with satisfying artistic effects, comparable to the optimization-based methods for an arbitrary style. The qualitative and quantitative analysis in the experiments demonstrates that the proposed approach achieves high-quality arbitrary artistic style transfer effectively, with a good trade-off among speed, flexibility, and quality.
+Motivated by this idea, we propose a novel method, coined ***MetaStyle***, which formulates the neural style transfer as a *bilevel optimization* problem and combines learning with only a few post-processing update steps to adapt to a fast approximation model with satisfying artistic effects, comparable to the optimization-based methods for an arbitrary style. The qualitative and quantitative analysis in the experiments demonstrate that the proposed approach achieves high-quality arbitrary artistic style transfer effectively, with a good trade-off among speed, flexibility, and quality.
 
 In summary:
 
@@ -107,10 +107,12 @@ $$
 \end{equation}
 $$
 
-where $$M(\cdot; \cdot)$$ denotes our model and $$\delta$$ the learning rate of the inner objective. The expectation of the outer objective $$\mathbb{E}_{c,s}$$ is taken with respect to both the styles and the content images in the validation set, whereas the expectation of the inner objective $$\mathbb{E}_c$$ is taken with respect to the content images in the training set only. This design allows the adapted model to specialize for a single style but still maintain the initialization generalized enough. Note that for the outer objective, $$w_{s, T}$$ implicitly depends on $$\theta$$. In essence, the framework learns an initialization $$M(\cdot; \theta)$$ that could adapt to $$M(\cdot; w_{s, T})$$ efficiently and preserve high image quality for an arbitrary style. Figure 2 shows the proposed framework.
+where $$M(\cdot; \cdot)$$ denotes our model and $$\delta$$ the learning rate of the inner objective. The expectation of the outer objective $$\mathbb{E}_{c,s}$$ is taken with respect to both the style and the content images in the validation set, whereas the expectation of the inner objective $$\mathbb{E}_c$$ is taken with respect to the content images in the training set only. This design allows the adapted model to specialize for a single style but still maintain the initialization generalized enough. Note that for the outer objective, $$w_{s, T}$$ implicitly depends on $$\theta$$. In essence, the framework learns an initialization $$M(\cdot; \theta)$$ that could adapt to $$M(\cdot; w_{s, T})$$ efficiently and preserve high image quality for an arbitrary style. Figure 2 shows the proposed framework.
 
 ![framework](/img/in-post/MetaStyle/procedure.png)
-<small class="img-hint">Figure 2. The proposed MetaStyle framework, in which the model is optimized using the bilevel optimization over large-scale content and style dataset. The framework first learns a style-neutral representation. A limited number of post-processing update steps is then applied to adapt the model quickly to a new style. After adaptation, the new model serves as an image transformation network with good transfer quality and high efficiency.</small>
+<small class="img-hint">Figure 3. The proposed MetaStyle framework, in which the model is optimized using the bilevel optimization over large-scale content and style dataset. The framework first learns a style-neutral representation. A limited number of post-processing update steps is then applied to adapt the model quickly to a new style. After adaptation, the new model serves as an image transformation network with good transfer quality and high efficiency.</small>
+
+For adaption, we post update our model initialized with $$\theta$$, *i.e.*, $$M(\cdot; \theta)$$ for only a limited number of steps (usually 100 to 200 steps suffice) and the model becomes tailored to a specific style.
 
 ## 4. Experiment
 
@@ -131,7 +133,7 @@ We train our model using MS-COCO as our content image dataset and WikiArt as our
 
 <small class="img-hint">Table 1. Speed and flexibility benchmarking results. Param lists the number of parameters in each model. 256/512 denotes inputs of 256 $$\times$$ 256/512 $$\times$$ 512. # Styles represents the number of styles a model could potentially handle. $$^\star$$Note that MetaStyle adapts to a specific style after very few update steps and the speed is measured for models adapted.</small>
 
-Table 1 summarizes the benchmarking results regarding style transfer speed and model flexibility. As shown in the table, our method achieves the same efficiency as Johnson *et al.* and Shen *et al.*. Additionally, unlike Shen *et al.* that introduces a gigantic parameter prediction model, MetaStyle is parsimonious with roughly the same number of parameters as Johnson *et al.*. While Johnson *et al.* requires training a new style model from scratch, MetaStyle could be immediately adapted to any style with a negligible number of updates under 30 seconds. This property significantly reduces the efforts in arbitrary style transfer and, at the same time, maintains a high image generation quality, as shown in the next paragraph.
+Table 1 summarizes the benchmarking results regarding style transfer speed and model flexibility. As shown in the table, our method achieves the same efficiency as Johnson *et al.* and Shen *et al.*. Additionally, unlike Shen *et al.* that introduces a gigantic parameter prediction model, MetaStyle is parsimonious with roughly the same number of parameters as Johnson *et al.*. While Johnson *et al.* requires training a new style model from scratch, MetaStyle could be immediately adapted to any style with a negligible number of updates under 30 seconds. This property significantly reduces the efforts in arbitrary style transfer and, at the same time, maintains a high image generation quality, as shown next.
 
 #### 4.2. Quality
 
@@ -142,14 +144,14 @@ Among methods capable of arbitrary style transfer, Li *et al.* applies style str
 #### 4.3. Additional Experiments
 
 ![interpolate](/img/in-post/MetaStyle/inter.png)
-<small class="img-hint">Figure 3. Two-style interpolation results. The content image and style images are shown on the two ends.</small>
+<small class="img-hint">Figure 4. Two-style interpolation results. The content image and style images are shown on the two ends.</small>
 
-* Style interpolation: To interpolate among a set of styles, we perform a convex combination on the parameters of adapted MetaStyle models learned after 200 iterations. Figure 3 shows the results of a two-style interpolation. 
+* Style interpolation: To interpolate among a set of styles, we perform a convex combination on the parameters of adapted MetaStyle models. Figure 3 shows the results of a two-style interpolation. 
 * Video style transfer: We perform the video style transfer by first training the MetaStyle model for a small number of iterations to adapt to a specific style, and then applying the transformation to a video sequence frame by frame. Figure 2 shows the video style transfer results in five consecutive frames. Note that our method does not introduce the flickering effect that harms aesthetics.
 
 ## 5. Conclusion
 
-We present the MetaStyle, a model is designed to achieve a right three-way trade-off among speed, flexibility, and quality in neural style transfer. Unlike previous methods, MetaStyle considers the arbitrary style transfer problem in a new scenario where a small (even negligible) number of post-processing updates are allowed to adapt the model quickly to a specific style. In experiments, we show that MetaStyle could adapt quickly to an arbitrary style within a small number iterations. Each adapted model is an image transformation network and benefits the high efficiency and style transformation quality on par with Johnson *et al.*. The detailed comparison and additional experiments also show the generalized style-neutral representation learned by MetaStyle. These results show MetaStyle indeed achieves a right trade-off.
+We present the MetaStyle, a model designed to achieve a right three-way trade-off among speed, flexibility, and quality in neural style transfer. Unlike previous methods, MetaStyle considers the arbitrary style transfer problem in a new scenario where a small (even negligible) number of post-processing updates are allowed to adapt the model quickly to a specific style. In experiments, we show that MetaStyle could adapt quickly to an arbitrary style within a small number iterations. Each adapted model is an image transformation network and benefits the high efficiency and style transformation quality on par with Johnson *et al.*. These results show MetaStyle indeed achieves a right trade-off.
 
 ## References
 
