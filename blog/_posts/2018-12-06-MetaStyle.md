@@ -146,8 +146,8 @@ Among methods capable of arbitrary style transfer, Li *et al.* applies style str
 ![interpolate](/img/in-post/MetaStyle/inter.png)
 <small class="img-hint">Figure 4. Two-style interpolation results. The content image and style images are shown on the two ends.</small>
 
-* Style interpolation: To interpolate among a set of styles, we perform a convex combination on the parameters of adapted MetaStyle models. Figure 3 shows the results of a two-style interpolation. 
-* Video style transfer: We perform the video style transfer by first training the MetaStyle model for a small number of iterations to adapt to a specific style, and then applying the transformation to a video sequence frame by frame. Figure 2 shows the video style transfer results in five consecutive frames. Note that our method does not introduce the flickering effect that harms aesthetics.
+* Style Interpolation: To interpolate among a set of styles, we perform a convex combination on the parameters of adapted MetaStyle models. Figure 3 shows the results of a two-style interpolation. 
+* Video Style Transfer: We perform the video style transfer by first training the MetaStyle model for a small number of iterations to adapt to a specific style, and then applying the transformation to a video sequence frame by frame. Figure 2 shows the video style transfer results in five consecutive frames. Note that our method does not introduce the flickering effect that harms aesthetics.
 
 ## 5. Conclusion
 
