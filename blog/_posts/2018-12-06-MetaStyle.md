@@ -153,6 +153,16 @@ Among methods capable of arbitrary style transfer, Li *et al.* applies style str
 
 We present the MetaStyle, a model designed to achieve a right three-way trade-off among speed, flexibility, and quality in neural style transfer. Unlike previous methods, MetaStyle considers the arbitrary style transfer problem in a new scenario where a small (even negligible) number of post-processing updates are allowed to adapt the model quickly to a specific style. In experiments, we show that MetaStyle could adapt quickly to an arbitrary style within a small number iterations. Each adapted model is an image transformation network and benefits the high efficiency and style transformation quality on par with Johnson *et al.*. These results show MetaStyle indeed achieves a right trade-off.
 
+If you find the paper helpful, please cite us.
+```
+@inproceedings{zhang2019metastyle,
+    author={Zhang, Chi, Zhu, Yixin, Zhu, Song-Chun},
+    title={MetaStyle: Three-Way Trade-Off Among Speed, Flexibility, and Quality in Neural Style Transfer},
+    booktitle={Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
+    year={2019}
+}
+```
+
 ## References
 
 [1] <a id="ref1">[Gatys, L. A., Ecker, A. S., & Bethge, M. (2016). Image style transfer using convolutional neural networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 2414-2423).](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)</a>  
