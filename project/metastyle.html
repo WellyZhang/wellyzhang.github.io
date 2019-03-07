@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <title>MetaStyle: Three-Way Trade-Off Among Speed, Flexibility, and Quality in Neural Style Transfer</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About Machine Learning, Computer Vision, Life, Photo Gallery and Everything | Chi Zhang, Programmer, Machine Learning and Computer Vision">
+    <meta name="keyword"  content="Chi Zhang, 张驰, Vikat的男朋友, Blog, Internet, Machine Learning, Computer Vision">
+    <link rel="shortcut icon" href="/img/Icon_V_2.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/project.css"">
+</head>
+
+<body>
+
+<div id="Banner">
+    <div height="80" id="header" style="background-color:#FFFFFF; color: #FFFFFF">
+        <center>
+            <table width="1100" height="80" border="0">
+                <tr>
+                    <td halign="center">
+                        <p class=un>MetaStyle: Three-Way Trade-Off Among Speed, Flexibility, and Quality in Neural Style Transfer</p>
+                        <hr>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+</div>
+
+<div id="main" style="padding-bottom:1em; padding-top: 2em; width: 70em; max-width: 70em; margin-left: auto; margin-right: auto;">
+    <center>
+        <img src="/img/in-post/MetaStyle/compare.png" style="width: 100%;">
+    </center>
+    <br>
+    <heading>
+        Abstract
+    </heading>
+    <p>
+        An unprecedented booming has been witnessed in the research area of artistic style transfer ever since Gatys et al. introduced the neural method. One of the remaining challenges is to balance a trade-off among three critical aspects---speed, flexibility, and quality: (i) the vanilla optimization-based algorithm produces impressive results for arbitrary styles, but is unsatisfyingly slow due to its iterative nature, (ii) the fast approximation methods based on feed-forward neural networks generate satisfactory artistic effects but bound to only a limited number of styles, and (iii) feature-matching methods like AdaIN achieve arbitrary style transfer in a real-time manner but at a cost of the compromised quality. We find it considerably difficult to balance the trade-off well merely using a single feed-forward step and ask, instead, whether there exists an algorithm that could adapt quickly to any style, while the adapted model maintains high efficiency and good image quality. Motivated by this idea, we propose a novel method, coined MetaStyle, which formulates the neural style transfer as a bilevel optimization problem and combines learning with only a few post-processing update steps to adapt to a fast approximation model with satisfying artistic effects, comparable to the optimization-based methods for an arbitrary style. The qualitative and quantitative analysis in the experiments demonstrates that the proposed approach achieves high-quality arbitrary artistic style transfer effectively, with a good trade-off among speed, flexibility, and quality.
+    </p>
+</div>
+
+
+<div id="video" style="padding-bottom:0em; padding-top: 0em; width: 70em; max-width: 70em; margin-left: auto; margin-right: auto;">
+	<heading>
+        Demo
+    </heading>
+	<p>
+	<center>
+        <iframe src="https://player.vimeo.com/video/303954291" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </center>
+</div>
+
+<div id="main" style="padding-bottom:0em; padding-top: 0em; width: 70em; max-width: 70em; margin-left: auto; margin-right: auto;">
+    <heading>
+        Paper
+    </heading>
+    <p>
+    <papertitle>MetaStyle: Three-Way Trade-Off Among Speed, Flexibility, and Quality in Neural Style Transfer</papertitle><br>
+                Chi Zhang, Yixin Zhu, Song-Chun Zhu<br>
+                Proceedings of the AAAI Conference on Artificial Intelligence (AAAI), 2019<br>
+                <a href="/attach/aaai19zhang.pdf">Paper</a> /
+                <a href="/attach/aaai19zhang_supp.pdf">Supplementary</a> /
+                <a href="https://github.com/WellyZhang/MetaStyle">Code</a> /
+                <a href="http://wellyzhang.github.io/blog/2018/12/06/MetaStyle/">Blog</a>
+    <p>
+    <center>
+        <a href="https://arxiv.org/pdf/1808.02201.pdf"><img src="/img/project/metastyle_thumbnail.jpg" style="width: 100%;"/></a>
+    </center>
+</div>
+
+<div id="main" style="padding-bottom:0em; padding-top: 2em; width: 70em; max-width: 70em; margin-left: auto; margin-right: auto; align-content: center">
+	<heading>
+        Team
+    </heading>
+	<div style="text-align: center; width: 100%; padding-top: 1em">
+		<div style="display: inline-block; width: 180px;">
+			<a href="http://wellyzhang.github.com">
+				<img src="http://vcla.stat.ucla.edu/images/people/chiz.jpg" alt="" style="border-radius: 50%; width:150px;">
+				<p>Chi Zhang<sup>1</sup></p>
+			</a>
+		</div>
+		<div style="display: inline-block; width: 180px;">
+			<a href="http://www.yzhu.io/"><img src="http://vcla.stat.ucla.edu/images/people/yzhu.jpg" alt="" style="border-radius: 50%; width:150px;">
+			<p>Yixin Zhu<sup>1</sup></p>
+			</a>
+		</div>
+		<div style="display: inline-block; width: 180px;">
+			<a href="http://www.stat.ucla.edu/~sczhu/"><img src="http://vcla.stat.ucla.edu/images/people/Zhu_UCLA.jpg" alt="" style="border-radius: 50%; width:150px;">
+			<p>Song-Chun Zhu<sup>1</sup></p>
+			</a>
+		</div>
+	</div>
+	<div style="text-align:center; width: 100%;">
+		<div style="display: inline-block; width: 500px;">
+			<p><sup>1 </sup>International Center for AI and Robot Autonomy</p>
+        </div>
+	</div>
+</div>
+
+<div id="main" style="padding-bottom:1em; padding-top: 0em; width: 80em; max-width: 70em; margin-left: auto; margin-right: auto;">
+    <heading>
+        Code
+    </heading>
+    <p>
+    View on <a href="https://github.com/WellyZhang/MetaStyle">Github</a>
+</div>
+
+<div id="main" style="padding-bottom:1em; padding-top: 0em; width: 80em; max-width: 70em; margin-left: auto; margin-right: auto;">
+    <heading>
+        Bibtex
+    </heading>
+    <p class=bibtax>
+        @inproceedings{zhang2019metastyle,
+        <br>author={Zhang, Chi, Zhu, Yixin, Zhu, Song-Chun},
+        <br>title={MetaStyle: Three-Way Trade-Off Among Speed, Flexibility, and Quality in Neural Style Transfer},
+        <br>booktitle={Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
+        <br>year={2019}}
+    </p>
+</div>
+
+</body>
+
+</html>
