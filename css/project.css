@@ -1,10 +1,10 @@
 a {
-    color: #000080;
+    color: #337ab7;
     text-decoration: none;
 }
 
 a:focus, a:hover {
-    color: #000080;
+    color: #337ab7;
     text-decoration: underline;
 }
 
@@ -36,17 +36,14 @@ papertitle {
     font-weight: 600;
 }
 
-hr { 
-    display: block;
-    margin-bottom: 0.5em;
-    margin-top: -0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-width: 2px;
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .un {
-    font-family: Italian;
+    font-family: Lora;
     font-size: 25px;
     text-align: center;
     font-weight:800;
@@ -60,16 +57,7 @@ strong {
 
 heading {
     font-family: Lora;
-    color: #970024; /*#EB6400;*/
+    color: #C0392B; /*#EB6400;*/
     font-size: 22px;
     font-weight: bold;
-}
-
-pvenue {
-    display: inline-block;
-    color: #500;
-}
-
-pkeywords{
-    color: #EB6400;
 }
