@@ -12,7 +12,7 @@ tags:
     - Computer Vision
 ---
 
-> This post briefly summarizes our work on trading off speed, flexibility, and quality in neural style transfer. For further details, please refer to our AAAI 2019 [paper](./attach/aaai19zhang.pdf).
+> This post briefly summarizes our work on trading off speed, flexibility, and quality in neural style transfer. For further details, please refer to our AAAI 2019 [paper](/attach/aaai19zhang.pdf).
 
 ![comparison](/img/in-post/MetaStyle/compare.png)
 <small class="img-hint">Figure 1. Stylization comparison between our method and others.</small>
