@@ -3,7 +3,7 @@ layout:     post
 title:      "MetaStyle: Trading Off Speed, Flexibility, and Quality in Neural Style Transfer"
 date:       2018-12-06
 author:     "Chi Zhang"
-header-img: "img/banner/post-banner-MetaStyle.png"
+header-img: "img/banner/post-banner-art.jpg"
 catalog: true
 use-math: true
 tags: 
