@@ -187,7 +187,7 @@ blockquote p {
 small.img-hint {
   display: block;
   margin-top: -20px;
-  text-align: center;
+  text-align: left;
 }
 br + small.img-hint {
   margin-top: -40px;
