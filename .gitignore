@@ -5,3 +5,5 @@
 
 # For macOS
 *.DS_Store
+
+.jekyll-cache
