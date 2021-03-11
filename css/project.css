@@ -17,8 +17,8 @@ a.hover:hover {
 }
 
 .bibtax { 
-    padding-left: 2em; 
-    text-indent: -2em;
+    /* padding-left: 2em;  */
+    /* text-indent: -2em; */
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 4px;
