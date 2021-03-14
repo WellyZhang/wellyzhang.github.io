@@ -186,7 +186,7 @@ blockquote p {
 }
 small.img-hint {
   display: block;
-  margin-top: -20px;
+  margin-top: -10px;
   text-align: left;
 }
 br + small.img-hint {
