@@ -159,7 +159,8 @@ If you find the paper helpful, please cite us.
     author={Zhang, Chi and Zhu, Yixin and Zhu, Song-Chun},
     title={MetaStyle: Three-Way Trade-Off Among Speed, Flexibility, and Quality in Neural Style Transfer},
     booktitle={Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)},
-    year={2019}}
+    year={2019}
+}
 ```
 
 ## References
