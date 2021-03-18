@@ -107,7 +107,30 @@
         Dataset
     </heading>
     <p>
-        Under preparation.
+        <center>
+            <img src="/img/in-post/ACRE/example.jpeg" style="width: 100%;">
+        </center>
+        <ur>
+            <li>Each ACRE problem consists of 10 panels: 6 for context and 4 for query.</li>
+            <li>In queries, we ask a visual reasoning system to predict the state of the Blicket machine given the objects in the queries.</li>
+        </ur>
+    </p>
+
+    <p>
+        In addition to the IID split, we create a compositionality split and a systematicity split.
+        <ur>
+            <li>Compositionality (Comp): we assign different shape-material-color combinations to the training and test set similar to <a href="https://cs.stanford.edu/people/jcjohns/clevr/">CoGenT in CLEVR</a>.</li>
+            <li>Systematicity (Sys): we vary the distribution of an activated Blicket detector in the context panels, with the machine lighting up 3 times in the training set and 4 times during testing.</li>
+        </ur>
+    </p>
+
+    <p>
+        Download the dataset here and check our <a href="https://github.com/WellyZhang/ACRE">GitHub</a> for dataset organization.
+        <ur>
+            <li><a href="https://drive.google.com/file/d/1P0WBnnjWolGsrATUQtx4ictiYlOGc-OT/view?usp=sharing">ACRE-IID</a></li>
+            <li><a href="https://drive.google.com/file/d/1-LZMt08a1v-KSuaQTS1lqD6BCEw47LEY/view?usp=sharing">ACRE-Comp</a></li>
+            <li><a href="https://drive.google.com/file/d/1Sn_tKbe6mMv7Tc_y6hJZnm7lSenjwIys/view?usp=sharing">ACRE-Sys</a></li>
+        </ur>
     </p>
 </div>
 
