@@ -13,10 +13,10 @@ timezone: America/Los_Angeles
 
 # SNS settings
 RSS: false
-weibo_username    : WellyZhang
-zhihu_username    : WellyZhang
-github_username   : WellyZhang
-twitter_username  : WellyZhangc
+# weibo_username    : WellyZhang
+# zhihu_username    : WellyZhang
+# github_username   : WellyZhang
+# twitter_username  : WellyZhangc
 #facebook_username : 
 
 
