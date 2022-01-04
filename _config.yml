@@ -10,6 +10,7 @@ baseurl: ""
 
 # timezone
 timezone: America/Los_Angeles
+time: 2022-01-04
 
 # SNS settings
 RSS: false
