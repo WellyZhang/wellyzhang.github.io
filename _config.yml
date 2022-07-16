@@ -79,6 +79,14 @@ featured-condition-size: 1
 # Friends
 friends: [
     {
+        title: "Guangyuan Jiang",
+        href: "https://jianggy.com/",
+    },
+    {
+        title: "Manjie Xu",
+        href: "https://mjtsu.github.io/",
+    },
+    {
         title: "Mark Edmonds",
         href: "http://www.mjedmonds.com/"
     },
