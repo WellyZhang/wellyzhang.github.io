@@ -80,11 +80,11 @@
             <a href="/attach/eccv22zhang_alans.pdf">Paper</a> /
             <a href="/attach/eccv22zhang_alans_supp.pdf">Supplementary</a> /
             <a href="https://github.com/WellyZhang/ALANS">Code</a> /
-            <a href="/blog/2021/03/19/ACRE">Blog</a>
+            <a href="/blog/2022/07/17/ALANS">Blog</a>
         </p>
         <p>
             <center>
-                <a href="/attach/cvpr21zhang_acre.pdf"><img src="/img/project/acre_thumbnail.jpg"
+                <a href="/attach/eccv22zhang_alans.pdf"><img src="/img/project/alans_thumbnail.jpg"
                         style="width: 100%;" /></a>
             </center>
         </p>
@@ -156,41 +156,16 @@
             Dataset
         </heading>
         <p>
-            <center>
-                <img src="/img/in-post/ACRE/example.jpeg" style="width: 100%;">
-            </center>
-            <ur>
-                <li>Each ACRE problem consists of 10 panels: 6 for context and 4 for query.</li>
-                <li>In queries, we ask a visual reasoning system to predict the state of the Blicket machine given the
-                    objects in the queries.</li>
-            </ur>
+            The new splits introduced in this work follow the same design in the original work of RAVEN and I-RAVEN,
+            except that the training set and the testing set are sampled from different distributions of relations. All
+            the splits are of the 3x3 grid layout. See the <a href="/attach/eccv22zhang_alans_supp.pdf">supplementary
+                material</a> for details.
         </p>
-
         <p>
-            In addition to the IID split, we create a compositionality split and a systematicity split.
-            <ur>
-                <li>Compositionality (Comp): we assign different shape-material-color combinations to the training and
-                    test set similar to <a href="https://cs.stanford.edu/people/jcjohns/clevr/">CoGenT in CLEVR</a>.
-                </li>
-                <li>Systematicity (Sys): we vary the distribution of an activated Blicket detector in the context
-                    panels, with the machine lighting up 3 times in the training set and 4 times during testing.</li>
-            </ur>
-        </p>
-
-        <p>
-            Download the dataset here and check our <a
-                href="https://github.com/WellyZhang/ACRE/tree/main/src/helper">GitHub</a> for dataset organization.
-            <ur>
-                <li><a
-                        href="https://drive.google.com/file/d/1P0WBnnjWolGsrATUQtx4ictiYlOGc-OT/view?usp=sharing">ACRE-IID</a>
-                </li>
-                <li><a
-                        href="https://drive.google.com/file/d/1-LZMt08a1v-KSuaQTS1lqD6BCEw47LEY/view?usp=sharing">ACRE-Comp</a>
-                </li>
-                <li><a
-                        href="https://drive.google.com/file/d/1Sn_tKbe6mMv7Tc_y6hJZnm7lSenjwIys/view?usp=sharing">ACRE-Sys</a>
-                </li>
-            </ur>
+            Download the dataset <a
+                href="https://drive.google.com/file/d/1QwHQ2Ope3bFUzbC8gOdZRRPBSHgXbJ49/view?usp=sharing">here</a>. The
+            zip file contains six folders (Systematicity, Productivity, and Localism for the two data generating
+            methods). Those starting with "I" are generated from the I-RAVEN method.
         </p>
     </div>
 
