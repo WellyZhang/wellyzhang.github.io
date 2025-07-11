@@ -6,7 +6,7 @@ email: wellyzhangc@gmail.com
 description: "About Machine Learning, Computer Vision, Life, Photo Gallery and Everything | Chi Zhang, Programmer, Machine Learning and Computer Vision"
 keyword: "Chi Zhang, 张驰, Blog, Internet, Machine Learning, Computer Vision"
 url: "http://wellyzhang.github.io"
-baseurl: ""                             
+baseurl: ""
 
 # timezone
 timezone: Asia/Beijing
@@ -18,7 +18,7 @@ RSS: false
 # zhihu_username    : WellyZhang
 # github_username   : WellyZhang
 # twitter_username  : WellyZhangc
-#facebook_username : 
+#facebook_username :
 
 
 # Build settings
@@ -28,7 +28,7 @@ permalink: pretty
 paginate: 10
 paginate_path: blog/page:num/
 exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md", "README.zh.md"]
-anchorjs: true                          
+anchorjs: true
 # if you want to customize anchor. check out line:181 of `post.html`
 
 
@@ -43,7 +43,7 @@ plugins: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            
+  input: GFM
 # use Github Flavored Markdown !important
 
 
@@ -53,18 +53,18 @@ disqus_username: welly-homepage
 # Duoshuo settings
 # duoshuo_username: wellyblog
 # Share component is depend on Comment so we can NOT use share only.
-# duoshuo_share: true                     
+# duoshuo_share: true
 # set to false if you want to use Comment without Sharing
 
 # Analytics settings
 # Google Analytics
-ga_track_id: 'UA-76201806-1'            
+ga_track_id: 'UA-76201806-1'
 # Format: UA-xxxxxx-xx
 ga_domain: wellyzhang.github.io
 
 
 # Sidebar settings
-sidebar: true                           
+sidebar: true
 # whether or not using Sidebar.
 sidebar-about-description: "Observe, Read, Think and Code"
 sidebar-avatar: /img/avatar.jpg
@@ -97,6 +97,10 @@ friends: [
     {
         title: "Shiji Xin",
         href: "https://www.shijixin.net/",
+    },
+    {
+        title: "Yuxi Ma",
+        href: "https://mayuxi.com/",
     },
     {
         title: "Mark Edmonds",
