@@ -36,6 +36,49 @@
   color: #0085a1 !important;
 }
 
+/* Publications expand/collapse buttons */
+.pub-section {
+  margin-bottom: 10px;
+}
+
+.pub-section > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.pub-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+.pub-section > summary::after {
+  content: "+ Expand";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border: 1px solid #0085a1;
+  border-radius: 999px;
+  color: #0085a1;
+  background: #ffffff;
+}
+
+.pub-section[open] > summary::after {
+  content: "− Collapse";
+  color: #ffffff;
+  background: #0085a1;
+}
+
+.pub-section > summary:hover::after {
+  filter: brightness(0.95);
+}
+
 .sidebar-container .tags a {
   border-color: #bfbfbf;
 }
