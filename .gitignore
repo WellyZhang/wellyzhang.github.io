@@ -2,6 +2,14 @@
 
 # Attachments now live on Google Drive, not in the repo
 /attach
+
+# Gallery photos live on Cloudflare R2, not in the repo.
+# /img/gallery is a local staging area: console.html writes resized images
+# there, upload.py pushes them to R2. The images themselves are never committed.
+/img/gallery/
+# R2 credentials for the upload script — never commit
+/gallery/.env
+__pycache__/
 *.html~
 *.md~
 *.markdown~

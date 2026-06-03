@@ -113,7 +113,7 @@
         <h1>Gallery Console</h1>
         <a href="../gallery/">&#8592; view the globe</a>
     </header>
-    <p class="lead">Connect your local <code>wellyzhang.github.io</code> folder once, drop photos, confirm a city for each, then <b>Save to repo</b> — the console writes the resized images into <code>img/gallery/</code> and updates <code>gallery/photos.json</code> directly. Then just <code>git commit</code>. Everything runs locally in your browser; nothing is uploaded anywhere.</p>
+    <p class="lead">Connect your local <code>wellyzhang.github.io</code> folder once, drop photos, confirm a city for each, then <b>Save to repo</b> — the console writes the resized images into the local <code>img/gallery/</code> staging folder and updates <code>gallery/photos.json</code>. Then run <code>python3 gallery/upload.py</code> to push the images to Cloudflare R2, and <code>git commit</code> the manifest. The photos themselves never enter the repo. Everything here runs locally in your browser.</p>
 
     <div class="bar">
         <button class="btn" id="pickBtn">+ Add photos</button>
@@ -139,10 +139,10 @@
     <div class="empty-hint" id="emptyHint">No photos added yet.</div>
 
     <div class="note">
-        <b>How to publish:</b> click <b>Connect repo folder</b> and pick your local <code>wellyzhang.github.io</code> directory (grant write access). Add photos, set cities, then <b>Save to repo</b> — images land in <code>img/gallery/</code> and <code>gallery/photos.json</code> is rewritten in place. Finish with
-        <code>git add img/gallery gallery/photos.json &amp;&amp; git commit &amp;&amp; git push</code>; GitHub Pages rebuilds and the new pins appear on the globe.
+        <b>How to publish:</b> click <b>Connect repo folder</b> and pick your local <code>wellyzhang.github.io</code> directory (grant write access). Add photos, set cities, then <b>Save to repo</b> — resized images land in the local <code>img/gallery/</code> staging folder and <code>gallery/photos.json</code> is rewritten in place. Then push the images to R2 and commit the manifest:
+        <code>python3 gallery/upload.py &amp;&amp; git add gallery/photos.json &amp;&amp; git commit &amp;&amp; git push</code>. GitHub Pages rebuilds and the new pins appear on the globe, loading from R2. The image files stay out of the repo (<code>img/gallery/</code> is gitignored).
         <br><br>
-        <b>Browser support:</b> direct saving uses the File System Access API (Chrome / Edge / Opera). In other browsers this falls back to a downloadable ZIP you unzip at the repo root.
+        <b>Browser support:</b> direct saving uses the File System Access API (Chrome / Edge / Opera). In other browsers this falls back to a downloadable ZIP you unzip at the repo root, then run <code>python3 gallery/upload.py</code> as above.
         <br><br>
         <b>City lookup</b> comes from a public cities database loaded on demand. Reverse-geocoding snaps GPS coordinates to the nearest city — exact enough for a city-level map. No GPS? Search for the city or type <code>lat, lng</code> directly.
     </div>
@@ -155,6 +155,10 @@
 <script>
 (function () {
     "use strict";
+    // Public base URL of the R2 bucket the gallery images are served from.
+    // Not a secret (it's a public URL); only used to preview already-published
+    // photos. Keep in sync with `gallery_cdn` in _config.yml.
+    var CDN = "https://pub-2ea15c5d89ec4040a007ac6e93607efd.r2.dev".replace(/\/$/, '');
     var MAX_FULL = 1600, MAX_THUMB = 400, JPEG_Q = 0.85;
     var photos = [];               // working set
     var cities = null;             // [{name,country,lat,lng}]
@@ -277,7 +281,7 @@
         var statusTxt = p.existing ? 'already published' : (p.status || '');
 
         el.innerHTML =
-            '<img class="pic" src="' + (p.preview || (p.existing ? '../' + p.thumb : '')) + '" alt="">' +
+            '<img class="pic" src="' + (p.preview || (p.existing ? CDN + '/' + p.thumb : '')) + '" alt="">' +
             '<div class="fields">' +
                 '<div class="status ' + statusClass + '">' + statusTxt + '</div>' +
                 '<div class="row">' +
@@ -345,7 +349,8 @@
 
     /* ---------------- manifest + validation ---------------- */
     function manifestEntry(p) {
-        var o = { id: p.id, src: '/' + p.src, thumb: '/' + p.thumb, city: p.city || 'Somewhere',
+        // Store bare R2 object keys; gallery.html resolves them against the CDN.
+        var o = { id: p.id, src: p.id + '.jpg', thumb: p.id + '_thumb.jpg', city: p.city || 'Somewhere',
             country: p.country || '', lat: p.lat, lng: p.lng };
         if (p.date) o.date = p.date;
         if (p.caption) o.caption = p.caption;

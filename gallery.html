@@ -317,11 +317,13 @@ title: Gallery
     <script>
     (function () {
         var BASE = "{{ site.baseurl }}";
+        // Gallery photos are served from a public Cloudflare R2 bucket, not the repo.
+        var CDN = "{{ site.gallery_cdn }}".replace(/\/$/, '');
         var TEX = "https://cdn.jsdelivr.net/npm/three-globe@2/example/img/";
 
         var world = Globe()
             (document.getElementById('globe'))
-            .globeImageUrl(BASE + '/img/gallery/earth-night-8k.jpg')
+            .globeImageUrl(BASE + '/img/earth-night-8k.jpg')
             .bumpImageUrl(TEX + 'earth-topology.png')
             .backgroundImageUrl(TEX + 'night-sky.png')
             .backgroundColor('rgba(0,0,0,0)')
@@ -363,7 +365,15 @@ title: Gallery
             try { return new Intl.DisplayNames(['en'], { type: 'region' }).of(code) || code; }
             catch (e) { return code; }
         }
-        function imgURL(p) { return BASE + p; }
+        // photos.json stores bare R2 object keys (e.g. "abc123.jpg"); resolve
+        // them against the public bucket. Absolute URLs and legacy "/img/..."
+        // repo paths still work, so old manifests keep rendering.
+        function imgURL(p) {
+            if (!p) return '';
+            if (/^https?:\/\//.test(p)) return p;
+            if (p.charAt(0) === '/') return BASE + p;
+            return CDN + '/' + p;
+        }
 
         function buildMarker(d) {
             var el = document.createElement('div');

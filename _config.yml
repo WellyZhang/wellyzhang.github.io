@@ -8,6 +8,11 @@ keyword: "Chi Zhang, 张驰, Blog, Internet, Machine Learning, Computer Vision"
 url: "http://wellyzhang.github.io"
 baseurl: ""
 
+# Gallery photos are hosted on a public Cloudflare R2 bucket (not committed to
+# this public repo). This is the public base URL the globe loads images from.
+# Replace with your r2.dev subdomain or custom domain (no trailing slash).
+gallery_cdn: "https://pub-2ea15c5d89ec4040a007ac6e93607efd.r2.dev"
+
 # timezone
 timezone: Asia/Beijing
 # time: 2022-01-04
