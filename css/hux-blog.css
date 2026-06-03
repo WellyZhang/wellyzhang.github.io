@@ -1414,3 +1414,120 @@ img::-moz-selection {
   font-weight: bold;
   margin: 0px 0 0px 0;
 }
+
+/* ===== Timeline (Experience & Education) ===== */
+.timeline {
+  position: relative;
+  margin: 25px 0 10px 0;
+  padding-left: 38px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, #0085a1 0%, rgba(0, 133, 161, 0.15) 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 5px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -38px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #0085a1;
+  box-shadow: 0 0 0 4px rgba(0, 133, 161, 0.12);
+  z-index: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-item.is-current .timeline-marker {
+  background: #0085a1;
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(0, 133, 161, 0.18);
+}
+
+.timeline-content {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  padding: 13px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateX(3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 133, 161, 0.35);
+}
+
+.timeline-content .timeline-logo {
+  float: right;
+  height: 92px;
+  max-width: 190px;
+  width: auto;
+  object-fit: contain;
+  margin: 4px 0 8px 20px;
+  opacity: 0.92;
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0085a1;
+  background: rgba(0, 133, 161, 0.08);
+  padding: 2px 11px;
+  border-radius: 12px;
+  margin-bottom: 7px;
+}
+
+.timeline-role {
+  margin: 4px 0 3px 0;
+  font-weight: 700;
+  font-size: 1.12em;
+  color: #333;
+}
+
+.timeline-org {
+  margin: 0 0 3px 0;
+  font-weight: 600;
+  font-size: 1em;
+  color: #0085a1;
+}
+
+.timeline-place {
+  margin: 0;
+  font-size: 0.88em;
+  color: #999;
+}
+
+@media only screen and (max-width: 480px) {
+  .timeline-content .timeline-logo {
+    height: 64px;
+    max-width: 120px;
+    margin-left: 12px;
+  }
+}

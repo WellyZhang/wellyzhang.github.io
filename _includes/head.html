@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
     <meta name="keyword"  content="{{ site.keyword }}">
+    <meta name="color-scheme" content="light dark">
     <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+
+    <!-- Theme bootstrap: set color theme before paint to avoid flash -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+            document.documentElement.classList.add('js');
+        })();
+    </script>
     
     <!-- MathJax support by Chi Zhang-->
     {% if page.use-math %}
@@ -21,6 +38,15 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/hux-blog.css" | prepend: site.baseurl }}">
+
+    <!-- Home page redesign CSS -->
+    {% if page.home %}
+    <!-- Source Serif Pro (variable). Served via jsDelivr so it loads
+         reliably from mainland China. -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/source-serif-4@5/index.css">
+    <link rel="stylesheet" href="{{ "/css/home.css" | prepend: site.baseurl }}">
+    {% endif %}
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">

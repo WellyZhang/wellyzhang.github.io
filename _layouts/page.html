@@ -2,6 +2,131 @@
 layout: default
 ---
 
+{% if page.home %}
+
+<!-- ============ Theme toggle ============ -->
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle light / dark">
+    <span class="icon-moon">&#9789;</span><span class="icon-sun">&#9728;</span>
+</button>
+
+<!-- ============ Immersive Hero ============ -->
+<header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <div class="hero__grid"></div>
+    </div>
+    <div class="hero__inner">
+        <img class="hero__avatar" src="{{ site.baseurl }}/img/avatar.jpg" alt="Chi Zhang">
+        <h1 class="hero__name">Chi Zhang<span class="hero__cn">&#24352;&#39536;</span></h1>
+        <p class="hero__role"><strong>Tenure-Track Assistant Professor</strong> &middot; Peking University</p>
+        <p class="hero__tag">Building machines that <span class="rotator" id="rotator">reason abstractly</span></p>
+        <div class="hero__links">
+            <a href="{{ site.baseurl }}/attach/CV_eng_blog.pdf">CV</a>
+            <a href="mailto:{{ site.email }}">Email</a>
+            <a href="https://github.com/WellyZhang">GitHub</a>
+            <a href="https://scholar.google.com/citations?user=NyjV-40AAAAJ&hl=en">Scholar</a>
+            <a href="{{ site.baseurl }}/gallery/">Gallery</a>
+        </div>
+    </div>
+    <a class="hero__scroll" href="#about-me">Explore<span class="chev"></span></a>
+</header>
+
+<!-- ============ Quote band ============ -->
+<section class="quote-band">
+    <blockquote>
+        &ldquo;The study of vision must therefore include not only the study of how to extract
+        from images the various aspects of the world that are useful to us, but also an inquiry into the nature of the
+        <strong>internal representations</strong> by which we capture this information and thus make it available as a
+        <strong>basis</strong> for decisions about our thoughts and actions.&rdquo;
+        <cite>&mdash; David Marr</cite>
+    </blockquote>
+</section>
+
+<!-- ============ Main content ============ -->
+<main class="home-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12">
+                {{ content }}
+
+                {% if site.friends %}
+                <section class="home-friends">
+                    <h2>Friends</h2>
+                    <p class="sub">People I have had the privilege to learn and work with.</p>
+                    <ul class="friend-grid">
+                        {% for friend in site.friends %}
+                            <li><a href="{{ friend.href }}" target="_blank" rel="noopener">{{ friend.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Theme toggle (persists choice; defaults to system preference)
+    (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('themeToggle');
+        if (btn) {
+            btn.addEventListener('click', function () {
+                var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+            });
+        }
+        // follow system changes while the user hasn't made an explicit choice
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+                try { if (localStorage.getItem('theme')) return; } catch (err) {}
+                root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+            });
+        }
+        // tint the toggle once past the hero
+        window.addEventListener('scroll', function () {
+            if (!btn) return;
+            btn.classList.toggle('is-scrolled', window.scrollY > window.innerHeight * 0.75);
+        }, { passive: true });
+    })();
+
+    // Rotating research-interest tagline
+    (function () {
+        var el = document.getElementById('rotator');
+        if (!el) return;
+        var words = ['reason abstractly', 'reason actively', 'reason efficiently',
+            'understand intuitive physics', 'prove theorems', 'see and think like us'];
+        var i = 0;
+        setInterval(function () {
+            el.classList.add('swap');
+            setTimeout(function () {
+                i = (i + 1) % words.length;
+                el.textContent = words[i];
+                el.classList.remove('swap');
+            }, 400);
+        }, 2800);
+    })();
+
+    // Scroll-reveal for sections, cards and timeline items
+    (function () {
+        if (!('IntersectionObserver' in window)) return;
+        // Note: do NOT reveal .pub-img li — those cards are cloned/toggled
+        // inside <details>, and a hidden card would never intersect.
+        var targets = document.querySelectorAll('.post-container h2, .timeline-item, .home-friends');
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+                if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+            });
+        }, { threshold: 0.12 });
+        targets.forEach(function (t) { t.classList.add('reveal'); io.observe(t); });
+    })();
+</script>
+
+{% else %}
+
 <!-- Page Header -->
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
     <div class="container">
@@ -31,23 +156,6 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
-
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <!-- no hr -->
-                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
-                    <div class="tags">
-        				{% for tag in site.tags %}
-                            {% if tag[1].size > site.featured-condition-size %}
-                				<a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
-        				{% endfor %}
-        			</div>
-                </section>
-                {% endif %}
 
                 <!-- Friends Blog -->
                 {% if site.friends %}
@@ -81,23 +189,6 @@ layout: default
                 col-xs-12
                 sidebar-container
             ">
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        {% for tag in site.tags %}
-                            {% if tag[1].size > site.featured-condition-size %}
-                                <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </section>
-                {% endif %}
-
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
                     <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
@@ -135,7 +226,7 @@ layout: default
                                 <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        <i class="fa  fa-stack-1x fa-inverse">&#30693;</i>
                                     </span>
                                 </a>
                             </li>
@@ -187,3 +278,5 @@ layout: default
         {% endif %}
 	</div>
 </div>
+
+{% endif %}

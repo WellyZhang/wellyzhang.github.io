@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!--
+  Gallery upload console — runs entirely in your browser.
+  Not linked from the site nav (no Jekyll front matter -> served as a static file).
+  Reach it at /gallery/console.html
+
+  Workflow:
+    1. Drop photos in.
+    2. EXIF GPS is read automatically and reverse-geocoded to the nearest city.
+       If a photo has no GPS, search for / type the city (or enter lat,lng).
+    3. Photos are resized (max 1600px) with a 400px thumbnail.
+    4. "Load current photos.json" to merge with what's already published (optional).
+    5. "Export ZIP" -> unzip at the repo root -> `git add` & commit.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Gallery Console</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0; background: #0a0e17; color: #e6ecf7;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-size: 14px; line-height: 1.5;
+    }
+    a { color: #7fb0ff; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 30px 24px 80px; }
+    header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 6px; }
+    h1 { font-size: 22px; margin: 0; letter-spacing: .04em;
+        background: linear-gradient(90deg,#aecbff,#7fe0ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .lead { color: #8da3c6; font-size: 13px; margin: 0 0 22px; }
+    .lead code { color: #9fc0ff; background: rgba(255,255,255,.05); padding: 1px 6px; border-radius: 4px; }
+
+    .bar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+    button, .btn {
+        font: inherit; cursor: pointer; border-radius: 8px; padding: 9px 16px;
+        border: 1px solid rgba(150,185,255,.25); background: rgba(22,30,50,.7); color: #dbe6f8;
+        transition: background .2s, border-color .2s, transform .05s;
+    }
+    button:hover, .btn:hover { background: rgba(35,48,80,.85); border-color: rgba(150,185,255,.5); }
+    button:active { transform: translateY(1px); }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .btn.primary { background: linear-gradient(180deg,#2a6cff,#1f53d6); border-color: #2a6cff; color: #fff; font-weight: 600; }
+    .btn.primary:hover { background: linear-gradient(180deg,#3a7bff,#2a62e6); }
+    .spacer { flex: 1; }
+    .pill { font-size: 12px; color: #8da3c6; }
+    .pill b { color: #cdd8ec; }
+
+    #drop {
+        border: 1.5px dashed rgba(150,185,255,.32); border-radius: 14px;
+        padding: 40px 20px; text-align: center; color: #93a6c8; cursor: pointer;
+        transition: background .2s, border-color .2s; margin-bottom: 22px;
+        background: rgba(255,255,255,.012);
+    }
+    #drop.hot { background: rgba(60,110,220,.12); border-color: #5a9bff; color: #cfe0ff; }
+    #drop b { color: #cdd8ec; }
+    #drop .big { font-size: 16px; margin-bottom: 6px; }
+
+    .card {
+        display: grid; grid-template-columns: 120px 1fr auto; gap: 18px;
+        background: rgba(18,24,40,.7); border: 1px solid rgba(150,185,255,.1);
+        border-radius: 12px; padding: 14px; margin-bottom: 12px; align-items: start;
+    }
+    .card.existing { opacity: .82; border-style: dashed; }
+    .card .pic { width: 120px; height: 120px; border-radius: 9px; object-fit: cover; background: #0c1322; }
+    .fields { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+    .row { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; }
+    .row label { font-size: 11px; color: #7f93b8; min-width: 52px; letter-spacing: .04em; text-transform: uppercase; }
+    input[type=text], input[type=number] {
+        font: inherit; background: rgba(8,12,22,.8); border: 1px solid rgba(150,185,255,.18);
+        color: #e6ecf7; border-radius: 7px; padding: 7px 10px;
+    }
+    input:focus { outline: none; border-color: #5a9bff; }
+    .city-in { flex: 1; min-width: 160px; }
+    .cap-in { flex: 1; min-width: 220px; }
+    .lat, .lng { width: 110px; }
+    .status { font-size: 12px; padding: 2px 0; }
+    .status.gps { color: #6ee7a8; }
+    .status.warn { color: #ffcf6b; }
+    .status.err { color: #ff8b8b; }
+    .remove { align-self: start; color: #b7c4dd; padding: 6px 11px; font-size: 13px; }
+    .remove:hover { color: #ff9b9b; border-color: rgba(255,120,120,.5); }
+
+    /* autocomplete dropdown */
+    .ac { position: relative; flex: 1; min-width: 160px; }
+    .ac-list {
+        position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 4px);
+        background: #121a2c; border: 1px solid rgba(150,185,255,.25); border-radius: 8px;
+        max-height: 220px; overflow-y: auto; display: none; box-shadow: 0 12px 40px rgba(0,0,0,.5);
+    }
+    .ac-list.open { display: block; }
+    .ac-item { padding: 8px 11px; cursor: pointer; font-size: 13px; }
+    .ac-item:hover, .ac-item.active { background: rgba(60,110,220,.28); }
+    .ac-item .c { color: #8da3c6; font-size: 11.5px; margin-left: 6px; }
+
+    .note { font-size: 12.5px; color: #8da3c6; background: rgba(40,70,140,.12);
+        border: 1px solid rgba(150,185,255,.18); border-radius: 10px; padding: 12px 15px; margin-top: 20px; line-height: 1.65; }
+    .note code { color: #9fc0ff; }
+    .toast {
+        position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px);
+        background: #16203a; border: 1px solid rgba(150,185,255,.3); color: #dbe6f8;
+        padding: 11px 20px; border-radius: 10px; opacity: 0; transition: all .3s; pointer-events: none; z-index: 50;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .empty-hint { color: #5f7196; text-align: center; padding: 24px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>Gallery Console</h1>
+        <a href="../gallery/">&#8592; view the globe</a>
+    </header>
+    <p class="lead">Connect your local <code>wellyzhang.github.io</code> folder once, drop photos, confirm a city for each, then <b>Save to repo</b> — the console writes the resized images into <code>img/gallery/</code> and updates <code>gallery/photos.json</code> directly. Then just <code>git commit</code>. Everything runs locally in your browser; nothing is uploaded anywhere.</p>
+
+    <div class="bar">
+        <button class="btn" id="pickBtn">+ Add photos</button>
+        <button class="btn" id="connectBtn">Connect repo folder…</button>
+        <button class="btn" id="loadBtn" style="display:none">Load current photos.json</button>
+        <div class="spacer"></div>
+        <span class="pill" id="repoStat"></span>
+        <span class="pill" id="cityStat">cities: loading…</span>
+        <span class="pill"><b id="count">0</b> photo(s)</span>
+        <button class="btn primary" id="saveBtn" disabled>Save to repo</button>
+        <button class="btn" id="exportBtn" disabled style="display:none">Export ZIP</button>
+    </div>
+
+    <div id="drop">
+        <div class="big"><b>Drop photos here</b></div>
+        <div>or click “Add photos”. JPEGs keep their EXIF GPS &amp; date.</div>
+    </div>
+
+    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+    <input type="file" id="jsonInput" accept="application/json,.json" hidden>
+
+    <div id="list"></div>
+    <div class="empty-hint" id="emptyHint">No photos added yet.</div>
+
+    <div class="note">
+        <b>How to publish:</b> click <b>Connect repo folder</b> and pick your local <code>wellyzhang.github.io</code> directory (grant write access). Add photos, set cities, then <b>Save to repo</b> — images land in <code>img/gallery/</code> and <code>gallery/photos.json</code> is rewritten in place. Finish with
+        <code>git add img/gallery gallery/photos.json &amp;&amp; git commit &amp;&amp; git push</code>; GitHub Pages rebuilds and the new pins appear on the globe.
+        <br><br>
+        <b>Browser support:</b> direct saving uses the File System Access API (Chrome / Edge / Opera). In other browsers this falls back to a downloadable ZIP you unzip at the repo root.
+        <br><br>
+        <b>City lookup</b> comes from a public cities database loaded on demand. Reverse-geocoding snaps GPS coordinates to the nearest city — exact enough for a city-level map. No GPS? Search for the city or type <code>lat, lng</code> directly.
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/exifr@7/dist/full.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3/dist/jszip.min.js"></script>
+<script>
+(function () {
+    "use strict";
+    var MAX_FULL = 1600, MAX_THUMB = 400, JPEG_Q = 0.85;
+    var photos = [];               // working set
+    var cities = null;             // [{name,country,lat,lng}]
+    var regionOf = (function () {
+        try { var dn = new Intl.DisplayNames(['en'], { type: 'region' }); return function (c) { return c ? (dn.of(c) || c) : ''; }; }
+        catch (e) { return function (c) { return c || ''; }; }
+    })();
+
+    /* ---------------- city database ---------------- */
+    var CITY_URL = 'https://cdn.jsdelivr.net/gh/lutangar/cities.json@master/cities.json';
+    function loadCities() {
+        fetch(CITY_URL).then(function (r) {
+            if (!r.ok) throw new Error(r.status); return r.json();
+        }).then(function (arr) {
+            cities = arr.map(function (c) {
+                return { name: c.name, country: c.country, lat: parseFloat(c.lat), lng: parseFloat(c.lng) };
+            }).filter(function (c) { return c.name && !isNaN(c.lat) && !isNaN(c.lng); });
+            document.getElementById('cityStat').textContent = 'cities: ' + cities.length.toLocaleString() + ' loaded';
+            // resolve any photos that arrived before the DB finished loading
+            photos.forEach(function (p) { if (p.hasGPS && !p.city) { var n = nearestCity(p.lat, p.lng); if (n) assignCity(p, n); } });
+            render();
+        }).catch(function () {
+            document.getElementById('cityStat').textContent = 'cities: offline — enter manually';
+        });
+    }
+    function nearestCity(lat, lng) {
+        if (!cities) return null;
+        var best = null, bd = Infinity, rad = Math.PI / 180;
+        for (var i = 0; i < cities.length; i++) {
+            var c = cities[i];
+            var dla = (c.lat - lat) * rad, dlo = (c.lng - lng) * rad;
+            var a = Math.sin(dla / 2) * Math.sin(dla / 2) +
+                Math.cos(lat * rad) * Math.cos(c.lat * rad) * Math.sin(dlo / 2) * Math.sin(dlo / 2);
+            if (a < bd) { bd = a; best = c; }
+        }
+        return best;
+    }
+    function searchCities(q, n) {
+        if (!cities || !q) return [];
+        q = q.toLowerCase(); var starts = [], has = [];
+        for (var i = 0; i < cities.length && starts.length < n; i++) {
+            var nm = cities[i].name.toLowerCase();
+            if (nm.indexOf(q) === 0) starts.push(cities[i]);
+            else if (has.length < n && nm.indexOf(q) > 0) has.push(cities[i]);
+        }
+        return starts.concat(has).slice(0, n);
+    }
+
+    /* ---------------- image processing ---------------- */
+    function resize(file, maxDim) {
+        return new Promise(function (resolve, reject) {
+            var url = URL.createObjectURL(file), img = new Image();
+            img.onload = function () {
+                var w = img.naturalWidth, h = img.naturalHeight, s = Math.min(1, maxDim / Math.max(w, h));
+                var cw = Math.round(w * s), ch = Math.round(h * s);
+                var cv = document.createElement('canvas'); cv.width = cw; cv.height = ch;
+                cv.getContext('2d').drawImage(img, 0, 0, cw, ch);
+                URL.revokeObjectURL(url);
+                cv.toBlob(function (b) { b ? resolve(b) : reject(new Error('encode failed')); }, 'image/jpeg', JPEG_Q);
+            };
+            img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('decode failed')); };
+            img.src = url;
+        });
+    }
+    function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+    function fmtDate(d) {
+        if (!d) return ''; var t = (d instanceof Date) ? d : new Date(d);
+        return isNaN(t) ? '' : t.toISOString().slice(0, 10);
+    }
+
+    function assignCity(p, c) {
+        p.city = c.name; p.country = c.country;
+        if (p.lat == null) p.lat = c.lat; if (p.lng == null) p.lng = c.lng;
+    }
+
+    function addFiles(files) {
+        Array.prototype.slice.call(files).forEach(function (file) {
+            if (!/^image\//.test(file.type)) return;
+            var id = uid();
+            var p = { id: id, name: file.name, src: 'img/gallery/' + id + '.jpg', thumb: 'img/gallery/' + id + '_thumb.jpg',
+                city: '', country: '', lat: null, lng: null, date: '', caption: '', hasGPS: false, status: 'reading…', preview: '' };
+            photos.push(p); render();
+
+            // thumbnail preview + resized blobs
+            resize(file, MAX_FULL).then(function (b) { p.fullBlob = b; });
+            resize(file, MAX_THUMB).then(function (b) { p.thumbBlob = b; p.preview = URL.createObjectURL(b); render(); });
+
+            // EXIF
+            exifr.parse(file, { gps: true, pick: ['DateTimeOriginal', 'CreateDate'] }).then(function (ex) {
+                if (ex) {
+                    p.date = fmtDate(ex.DateTimeOriginal || ex.CreateDate);
+                    if (typeof ex.latitude === 'number' && typeof ex.longitude === 'number') {
+                        p.lat = ex.latitude; p.lng = ex.longitude; p.hasGPS = true;
+                        var n = nearestCity(p.lat, p.lng);
+                        if (n) { assignCity(p, n); p.status = 'GPS → ' + n.name; }
+                        else { p.status = cities ? 'GPS found' : 'GPS found (loading cities…)'; }
+                    } else { p.status = 'no GPS — pick a city'; }
+                } else { p.status = 'no EXIF — pick a city'; }
+            }).catch(function () { p.status = 'no EXIF — pick a city'; })
+              .finally(function () { render(); });
+        });
+    }
+
+    /* ---------------- rendering ---------------- */
+    var list = document.getElementById('list');
+    function render() {
+        document.getElementById('count').textContent = photos.length;
+        document.getElementById('emptyHint').style.display = photos.length ? 'none' : 'block';
+        var empty = photos.length === 0;
+        document.getElementById('exportBtn').disabled = empty;
+        document.getElementById('saveBtn').disabled = empty || !repoHandle;
+        list.innerHTML = '';
+        photos.forEach(function (p) { list.appendChild(card(p)); });
+    }
+
+    function card(p) {
+        var el = document.createElement('div');
+        el.className = 'card' + (p.existing ? ' existing' : '');
+        var statusClass = p.existing ? '' : (p.hasGPS && p.city) ? 'gps' : (p.city ? '' : 'warn');
+        var statusTxt = p.existing ? 'already published' : (p.status || '');
+
+        el.innerHTML =
+            '<img class="pic" src="' + (p.preview || (p.existing ? '../' + p.thumb : '')) + '" alt="">' +
+            '<div class="fields">' +
+                '<div class="status ' + statusClass + '">' + statusTxt + '</div>' +
+                '<div class="row">' +
+                    '<label>City</label>' +
+                    '<div class="ac">' +
+                        '<input type="text" class="city-in" placeholder="search a city…" value="' + esc(p.city) + '">' +
+                        '<div class="ac-list"></div>' +
+                    '</div>' +
+                    '<input type="number" class="lat" step="0.0001" placeholder="lat" value="' + (p.lat == null ? '' : p.lat) + '">' +
+                    '<input type="number" class="lng" step="0.0001" placeholder="lng" value="' + (p.lng == null ? '' : p.lng) + '">' +
+                '</div>' +
+                '<div class="row">' +
+                    '<label>Caption</label>' +
+                    '<input type="text" class="cap-in" placeholder="optional" value="' + esc(p.caption) + '">' +
+                    '<label>Date</label>' +
+                    '<input type="text" class="date-in" style="width:120px" placeholder="YYYY-MM-DD" value="' + esc(p.date) + '">' +
+                '</div>' +
+            '</div>' +
+            '<button class="remove">remove</button>';
+
+        // city autocomplete
+        var cityIn = el.querySelector('.city-in'), acList = el.querySelector('.ac-list');
+        var latIn = el.querySelector('.lat'), lngIn = el.querySelector('.lng');
+        var active = -1, results = [];
+        function closeAc() { acList.classList.remove('open'); active = -1; }
+        cityIn.addEventListener('input', function () {
+            p.city = cityIn.value;
+            results = searchCities(cityIn.value.trim(), 8);
+            acList.innerHTML = '';
+            if (!results.length) { closeAc(); return; }
+            results.forEach(function (c, i) {
+                var it = document.createElement('div'); it.className = 'ac-item';
+                it.innerHTML = esc(c.name) + '<span class="c">' + esc(regionOf(c.country)) + '</span>';
+                it.addEventListener('mousedown', function (e) { e.preventDefault(); choose(c); });
+                acList.appendChild(it);
+            });
+            acList.classList.add('open');
+        });
+        cityIn.addEventListener('keydown', function (e) {
+            if (!acList.classList.contains('open')) return;
+            var items = acList.querySelectorAll('.ac-item');
+            if (e.key === 'ArrowDown') { active = Math.min(active + 1, items.length - 1); e.preventDefault(); }
+            else if (e.key === 'ArrowUp') { active = Math.max(active - 1, 0); e.preventDefault(); }
+            else if (e.key === 'Enter') { if (active >= 0) { choose(results[active]); e.preventDefault(); } return; }
+            else if (e.key === 'Escape') { closeAc(); return; }
+            items.forEach(function (it, i) { it.classList.toggle('active', i === active); });
+        });
+        cityIn.addEventListener('blur', function () { setTimeout(closeAc, 120); });
+        function choose(c) {
+            p.city = c.name; p.country = c.country; p.lat = c.lat; p.lng = c.lng;
+            cityIn.value = c.name; latIn.value = c.lat; lngIn.value = c.lng;
+            p.status = p.hasGPS ? 'GPS → ' + c.name : 'city set'; closeAc(); render();
+        }
+
+        latIn.addEventListener('change', function () { p.lat = latIn.value === '' ? null : parseFloat(latIn.value); });
+        lngIn.addEventListener('change', function () { p.lng = lngIn.value === '' ? null : parseFloat(lngIn.value); });
+        el.querySelector('.cap-in').addEventListener('input', function (e) { p.caption = e.target.value; });
+        el.querySelector('.date-in').addEventListener('input', function (e) { p.date = e.target.value; });
+        el.querySelector('.remove').addEventListener('click', function () {
+            photos = photos.filter(function (x) { return x !== p; }); render();
+        });
+        return el;
+    }
+    function esc(s) { return (s == null ? '' : String(s)).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+
+    /* ---------------- manifest + validation ---------------- */
+    function manifestEntry(p) {
+        var o = { id: p.id, src: '/' + p.src, thumb: '/' + p.thumb, city: p.city || 'Somewhere',
+            country: p.country || '', lat: p.lat, lng: p.lng };
+        if (p.date) o.date = p.date;
+        if (p.caption) o.caption = p.caption;
+        return o;
+    }
+    function ready() {
+        var bad = photos.filter(function (p) { return typeof p.lat !== 'number' || typeof p.lng !== 'number' || isNaN(p.lat) || isNaN(p.lng); });
+        if (bad.length) { toast(bad.length + ' photo(s) still need a city / coordinates'); return false; }
+        var pending = photos.filter(function (p) { return !p.existing && (!p.fullBlob || !p.thumbBlob); });
+        if (pending.length) { toast('still resizing ' + pending.length + ' photo(s) — try again in a moment'); return false; }
+        return true;
+    }
+    function mergeManifest(arr) {
+        if (!Array.isArray(arr)) return 0;
+        var have = {}; photos.forEach(function (p) { have[p.id] = true; });
+        var added = 0;
+        arr.forEach(function (m) {
+            if (!m || have[m.id]) return;
+            photos.unshift({ id: m.id, existing: true,
+                src: (m.src || '').replace(/^\//, ''), thumb: (m.thumb || m.src || '').replace(/^\//, ''),
+                city: m.city || '', country: m.country || '', lat: m.lat, lng: m.lng,
+                date: m.date || '', caption: m.caption || '', hasGPS: false, status: '' });
+            added++;
+        });
+        return added;
+    }
+
+    /* ---------------- direct repo writing (File System Access API) ---------------- */
+    var repoHandle = null;
+    var hasFS = typeof window.showDirectoryPicker === 'function';
+
+    function getDir(root, parts) {            // walk/create nested directories
+        return parts.reduce(function (chain, name) {
+            return chain.then(function (h) { return h.getDirectoryHandle(name, { create: true }); });
+        }, Promise.resolve(root));
+    }
+    function writeFile(dirHandle, name, data) {
+        return dirHandle.getFileHandle(name, { create: true }).then(function (fh) {
+            return fh.createWritable().then(function (w) { return w.write(data).then(function () { return w.close(); }); });
+        });
+    }
+    function readJSON(root, parts, name) {
+        return parts.reduce(function (chain, n) {
+            return chain.then(function (h) { return h.getDirectoryHandle(n); });
+        }, Promise.resolve(root))
+        .then(function (dir) { return dir.getFileHandle(name); })
+        .then(function (fh) { return fh.getFile(); })
+        .then(function (f) { return f.text(); })
+        .then(function (t) { return JSON.parse(t); })
+        .catch(function () { return null; });
+    }
+
+    function connectRepo() {
+        window.showDirectoryPicker({ id: 'wellyzhang-repo', mode: 'readwrite' }).then(function (h) {
+            return h.requestPermission({ mode: 'readwrite' }).then(function (perm) {
+                if (perm !== 'granted') throw new Error('permission denied');
+                repoHandle = h;
+                document.getElementById('repoStat').innerHTML = 'repo: <b>' + esc(h.name) + '</b> &#10003;';
+                document.getElementById('saveBtn').disabled = photos.length === 0;
+                // auto-merge whatever is already published
+                return readJSON(h, ['gallery'], 'photos.json').then(function (arr) {
+                    if (arr) { var n = mergeManifest(arr); render(); if (n) toast('Loaded ' + n + ' published photo(s) from the repo.'); }
+                });
+            });
+        }).catch(function (err) {
+            if (err && err.name !== 'AbortError') toast('Could not open that folder.');
+        });
+    }
+
+    function saveToRepo() {
+        if (!repoHandle) { toast('Connect the repo folder first.'); return; }
+        if (!ready()) return;
+        var btn = document.getElementById('saveBtn'); btn.disabled = true; btn.textContent = 'Saving…';
+        var fresh = photos.filter(function (p) { return !p.existing; });
+        getDir(repoHandle, ['img', 'gallery']).then(function (imgDir) {
+            return fresh.reduce(function (chain, p) {
+                return chain
+                    .then(function () { return writeFile(imgDir, p.id + '.jpg', p.fullBlob); })
+                    .then(function () { return writeFile(imgDir, p.id + '_thumb.jpg', p.thumbBlob); });
+            }, Promise.resolve());
+        }).then(function () {
+            return getDir(repoHandle, ['gallery']).then(function (gDir) {
+                return writeFile(gDir, 'photos.json', JSON.stringify(photos.map(manifestEntry), null, 2));
+            });
+        }).then(function () {
+            // saved photos become "existing" so re-saving won't rewrite their images
+            fresh.forEach(function (p) { p.existing = true; p.status = 'saved'; });
+            render();
+            toast('Saved ' + fresh.length + ' photo(s) to the repo. Now: git add & commit.');
+        }).catch(function (err) {
+            toast('Save failed: ' + (err && err.message ? err.message : 'unknown error'));
+        }).finally(function () {
+            btn.textContent = 'Save to repo'; btn.disabled = photos.length === 0;
+        });
+    }
+
+    /* ---------------- ZIP fallback (no File System Access API) ---------------- */
+    function exportZip() {
+        if (!ready()) return;
+        var zip = new JSZip();
+        var manifest = photos.map(manifestEntry);
+        zip.file('gallery/photos.json', JSON.stringify(manifest, null, 2));
+        photos.forEach(function (p) {
+            if (p.existing) return;
+            zip.file('img/gallery/' + p.id + '.jpg', p.fullBlob);
+            zip.file('img/gallery/' + p.id + '_thumb.jpg', p.thumbBlob);
+        });
+        zip.generateAsync({ type: 'blob' }).then(function (blob) {
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'gallery-export-' + new Date().toISOString().slice(0, 10) + '.zip';
+            a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+            toast('Exported ' + manifest.length + ' photo(s). Unzip at the repo root & commit.');
+        });
+    }
+
+    /* wire up buttons depending on browser capability */
+    if (hasFS) {
+        document.getElementById('connectBtn').addEventListener('click', connectRepo);
+        document.getElementById('saveBtn').addEventListener('click', saveToRepo);
+    } else {
+        document.getElementById('connectBtn').style.display = 'none';
+        document.getElementById('saveBtn').style.display = 'none';
+        document.getElementById('loadBtn').style.display = '';
+        var ex = document.getElementById('exportBtn'); ex.style.display = ''; ex.classList.add('primary');
+        ex.addEventListener('click', exportZip);
+        document.getElementById('loadBtn').addEventListener('click', function () { document.getElementById('jsonInput').click(); });
+    }
+
+    /* manual photos.json load (fallback / optional) */
+    document.getElementById('jsonInput').addEventListener('change', function (e) {
+        var f = e.target.files[0]; if (!f) return;
+        var rd = new FileReader();
+        rd.onload = function () {
+            try { var n = mergeManifest(JSON.parse(rd.result)); render(); toast('Merged ' + n + ' published photo(s).'); }
+            catch (err) { toast('Could not read that photos.json'); }
+        };
+        rd.readAsText(f); e.target.value = '';
+    });
+
+    /* ---------------- drop zone / inputs ---------------- */
+    var drop = document.getElementById('drop'), fileInput = document.getElementById('fileInput');
+    document.getElementById('pickBtn').addEventListener('click', function () { fileInput.click(); });
+    drop.addEventListener('click', function () { fileInput.click(); });
+    fileInput.addEventListener('change', function (e) { addFiles(e.target.files); e.target.value = ''; });
+    ['dragenter', 'dragover'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add('hot'); }); });
+    ['dragleave', 'drop'].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove('hot'); }); });
+    drop.addEventListener('drop', function (e) { if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+    window.addEventListener('dragover', function (e) { e.preventDefault(); });
+    window.addEventListener('drop', function (e) { e.preventDefault(); });
+    window.addEventListener('beforeunload', function (e) { if (photos.some(function (p) { return !p.existing; })) { e.preventDefault(); e.returnValue = ''; } });
+
+    var toastT;
+    function toast(msg) {
+        var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+        clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove('show'); }, 3200);
+    }
+
+    loadCities();
+    render();
+})();
+</script>
+</body>
+</html>

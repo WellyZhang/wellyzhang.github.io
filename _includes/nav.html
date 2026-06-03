@@ -19,22 +19,15 @@
                     <li>
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
-                    {% assign blog = 0 %}
+                    {% comment %} Blog and Tags are intentionally excluded from the nav. {% endcomment %}
+                    {% assign nav_skip = "About Me,Blog,Tags" | split: "," %}
                     {% for page in site.pages %}
-                        {% if page.title and page.title != "About Me" %}
-                            {% if page.title == "Blog" %}
-                                <!-- Do not allow Blog to appear more than once in nav -->
-                                {% if blog == 0%}
-                                    {% assign blog = 1 %}
-                                    <li>
-                                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                                    </li>
-                                {% endif %}
-                            {% else %}
+                        {% if page.title %}
+                            {% unless nav_skip contains page.title %}
                                 <li>
                                     <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                                 </li>
-                            {% endif %}
+                            {% endunless %}
                         {% endif %}
                     {% endfor %}
                 </ul>

@@ -4,7 +4,7 @@
 {% include head.html %}
 
 <!-- hack iOS CSS :active style -->
-<body ontouchstart="">
+<body ontouchstart="" class="{% if page.home %}home{% endif %}">
 
     {% include nav.html %}
 
