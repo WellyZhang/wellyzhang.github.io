@@ -27,7 +27,7 @@ My reseach interests include but are not limited to
 
 I was a research assistant at [*VCLA*](http://vcla.stat.ucla.edu/) for the past summer with [Professor Song-Chun Zhu](http://www.stat.ucla.edu/~sczhu/) and I'm now a research intern at *Hong Kong University of Science and Technology* with [Professor Dit-Yan Yeung](https://home.cse.ust.hk/~dyyeung/www/Home.html).
 
-\[[GitHub](https://github.com/WellyZhang)\] \[[CV](/attach/CV_eng_blog.pdf)\] \[[Contact](mailto:wellyzhangc@gmail.com)\]
+\[[GitHub](https://github.com/WellyZhang)\] \[[CV](https://drive.google.com/file/d/1YNZvrmbabdOOrMtvZJnJGGrpLI-lzkDp/view?usp=sharing)\] \[[Contact](mailto:wellyzhangc@gmail.com)\]
 
 ## Experience
 
@@ -62,7 +62,7 @@ I was a research assistant at [*VCLA*](http://vcla.stat.ucla.edu/) for the past 
 #### Presentations
 
 * [Detection as Regression](/attach/Detection_as_Regression.pdf)
-* [Real-Time Automatic Number Plate Detection](/attach/Post-ANPR.pdf)
+* [Real-Time Automatic Number Plate Detection](https://drive.google.com/file/d/1OZnPrDs5Rn7hRw7TYc99rLd7kMFLx9Rv/view?usp=sharing)
 
 ## Projects
 

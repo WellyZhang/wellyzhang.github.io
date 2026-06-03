@@ -11,7 +11,7 @@ tags:
     - Reinforcement Learning
 ---
 
-> To learn more about the approach we take to teach a robot to open medicine bottles, please checkout our [paper](./attach/aaai19liu.pdf).
+> To learn more about the approach we take to teach a robot to open medicine bottles, please checkout our [paper](https://drive.google.com/file/d/1eImPps6vZBKwnG_IeQnutCHTge_P0hyk/view?usp=sharing).
 
 ## 1. Introduction
 
@@ -78,7 +78,7 @@ We present a *force-based, goal-oriented mirroring* approach for a robot to lear
 
 In the experiment, we use a tactile glove to collect human demonstrations of opening medicine bottles with safety locks. Successful demonstrations of various bottle openings demonstrate the effectiveness of the proposed approach.
 
-For numerical results and detailed analysis, please refer to our full [paper](./attach/aaai19liu.pdf). If you find the paper helpful, please cite us.
+For numerical results and detailed analysis, please refer to our full [paper](https://drive.google.com/file/d/1eImPps6vZBKwnG_IeQnutCHTge_P0hyk/view?usp=sharing). If you find the paper helpful, please cite us.
 ```
 @inproceedings{liu2019mirroring,
     author={Liu, Hangxin and Zhang, Chi and Zhu, Yixin and Jiang, Chenfanfu and Zhu, Song-Chun},
