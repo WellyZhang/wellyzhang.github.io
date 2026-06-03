@@ -62,8 +62,8 @@ body.home a:hover, body.home a:focus { color: var(--accent-2); }
    --------------------------------------------------------------- */
 .theme-toggle {
   position: fixed;
-  top: 18px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
   z-index: 1200;
   width: 42px;
   height: 42px;
