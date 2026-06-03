@@ -1,4 +1,7 @@
 /_site
+
+# Attachments now live on Google Drive, not in the repo
+/attach
 *.html~
 *.md~
 *.markdown~
