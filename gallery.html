@@ -313,13 +313,15 @@ title: Gallery
         <div class="v-cap" id="vCap"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/globe.gl@2"></script>
+    <script src="{{ site.baseurl }}/js/globe.gl.min.js"></script>
     <script>
     (function () {
         var BASE = "{{ site.baseurl }}";
         // Gallery photos are served from a public Cloudflare R2 bucket, not the repo.
         var CDN = "{{ site.gallery_cdn }}".replace(/\/$/, '');
-        var TEX = "https://cdn.jsdelivr.net/npm/three-globe@2/example/img/";
+        // Globe textures are self-hosted under /img so they load in regions
+        // where jsDelivr is throttled/blocked (e.g. mainland China).
+        var TEX = BASE + "/img/";
 
         var world = Globe()
             (document.getElementById('globe'))
