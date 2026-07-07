@@ -19,6 +19,9 @@
                     <li>
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
+                    <li>
+                        <a href="https://aria-ai-lab.github.io/">Lab</a>
+                    </li>
                     {% comment %} Blog and Tags are intentionally excluded from the nav. {% endcomment %}
                     {% assign nav_skip = "About Me,Blog,Tags" | split: "," %}
                     {% for page in site.pages %}
@@ -75,11 +78,11 @@
     /**
      * Since Fastclick is used to delegate 'touchstart' globally
      * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * Using 'e.stopPropagation' to stop 'touchstart' event from
      * $toggle/$collapse will break global delegation.
-     * 
+     *
      * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
+     * added to document close HuxNav.
      *
      * Also, we use 'click' instead of 'touchstart' as compromise
      */
